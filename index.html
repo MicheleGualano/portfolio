@@ -178,49 +178,105 @@
     }
 
     /* ============================================================
-       CARD
+       CARD — per-piece theming via card.theme CSS vars
        ============================================================ */
     .card {
-      background: var(--shell-surface);
-      border: 1px solid var(--shell-border);
+      position: relative;
+      background: var(--card-bg, var(--shell-surface));
+      color: var(--card-ink, var(--shell-ink));
+      border: 1px solid var(--card-border, var(--shell-border));
       border-radius: var(--radius);
       padding: 22px;
       cursor: pointer;
-      transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
+      transition: border-color 0.18s, transform 0.18s, box-shadow 0.22s;
       display: flex;
       flex-direction: column;
-      min-height: 200px;
+      min-height: 220px;
+      overflow: hidden;
     }
     .card:hover {
-      border-color: var(--shell-border-strong);
+      border-color: var(--card-border-strong, var(--shell-border-strong));
       transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0,0,0,0.04);
     }
+    .card-decor {
+      position: absolute;
+      pointer-events: none;
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .card-decor.top-left { top: 16px; left: 16px; }
+    .card-decor.top-right { top: 16px; right: 16px; }
+    .card-decor.bottom-left { bottom: 16px; left: 16px; }
+    .card-decor.bottom-right { bottom: 16px; right: 16px; }
     .card-thumb {
       width: 100%;
       aspect-ratio: 16 / 9;
-      background: #f0f0ed;
-      border-radius: 8px;
+      background: var(--card-thumb-bg, #f0f0ed);
+      border-radius: 10px;
       overflow: hidden;
       margin-bottom: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--shell-ink-faint);
+      color: var(--card-ink-muted, var(--shell-ink-faint));
       font-size: 12px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
-    .card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .card-title { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 6px; }
-    .card-subtitle { font-size: 13px; color: var(--shell-ink-muted); flex: 1; margin-bottom: 14px; }
+    .card-thumb img, .card-thumb svg {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.012em;
+      line-height: 1.25;
+      margin-bottom: 6px;
+      color: var(--card-ink, var(--shell-ink));
+    }
+    .card-subtitle {
+      font-size: 13px;
+      color: var(--card-ink-muted, var(--shell-ink-muted));
+      flex: 1;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .card-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .card-highlight-badge {
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 99px;
+      border: 1px solid var(--card-border-strong, var(--card-accent, var(--shell-border-strong)));
+      color: var(--card-highlight-ink, var(--card-ink, var(--shell-ink)));
+      font-weight: 600;
+      background: transparent;
+    }
     .card-footer {
       display: flex; justify-content: space-between; align-items: center;
-      font-size: 11px; color: var(--shell-ink-faint);
+      font-size: 11px;
+      color: var(--card-ink-muted, var(--shell-ink-faint));
       text-transform: uppercase; letter-spacing: 0.06em;
+      padding-top: 12px;
+      border-top: 1px solid var(--card-border, rgba(0,0,0,0.08));
     }
-    .card-tag { font-weight: 500; }
-    .card-link-indicator { opacity: 0.7; }
+    .card-tag {
+      font-weight: 500;
+      color: var(--card-accent, var(--card-ink-muted, var(--shell-ink-faint)));
+    }
+    .card-link-indicator {
+      opacity: 0.9;
+      color: var(--card-accent, var(--card-ink, var(--shell-ink-faint)));
+      font-weight: 600;
+    }
 
     .empty {
       grid-column: 1 / -1; padding: 64px 32px; text-align: center; color: var(--shell-ink-faint);
@@ -891,18 +947,51 @@
 
     function cardHTML(p) {
       const card = p.card || {};
+      const theme = card.theme || {};
+
+      // Build inline CSS vars from card.theme (per-piece colored card)
+      const styleVars = [];
+      const themeMap = {
+        bg: '--card-bg', ink: '--card-ink', ink_muted: '--card-ink-muted',
+        accent: '--card-accent', border: '--card-border', border_strong: '--card-border-strong',
+        thumb_bg: '--card-thumb-bg', highlight_ink: '--card-highlight-ink'
+      };
+      for (const k in themeMap) {
+        if (theme[k]) styleVars.push(`${themeMap[k]}:${theme[k]}`);
+      }
+      const styleAttr = styleVars.length ? `style="${styleVars.join(';')}"` : '';
+
+      // Thumbnail (image or text fallback)
       const thumb = card.thumbnail_asset || p.assets?.hero?.src;
       const thumbHTML = thumb
         ? `<img src="${esc(thumb)}" alt="${esc(card.title || '')}" loading="lazy" />`
         : `<span>${esc((card.tag || 'work').toUpperCase())}</span>`;
+
+      // Highlight badges (top labels like "STARTUP", "PRE-ACCELERATOR · H-FARM")
+      const highlightsHTML = (card.highlight || []).length
+        ? `<div class="card-highlights">${(card.highlight || []).map(h =>
+            `<span class="card-highlight-badge">${esc(h.label)}</span>`
+          ).join('')}</div>`
+        : '';
+
+      // Decor (small asset positioned in corner, e.g. brand mark watermark)
+      const decor = card.decor;
+      const decorHTML = decor && decor.src
+        ? `<img class="card-decor ${esc(decor.position || 'top-left')}" src="${esc(decor.src)}" alt="" style="opacity:${decor.opacity ?? 0.9}" />`
+        : '';
+
+      // Link indicator (external_link_indicator label or icon hint)
       const linkIcon = card.external_link_indicator && card.external_link_indicator !== 'none'
         ? `<span class="card-link-indicator">↗ ${esc(card.external_link_indicator)}</span>`
         : '';
+
       return `
-        <div class="card" data-id="${esc(p.id)}">
+        <div class="card" data-id="${esc(p.id)}" ${styleAttr}>
+          ${decorHTML}
           <div class="card-thumb">${thumbHTML}</div>
           <div class="card-title">${esc(card.title || 'Untitled')}</div>
           <div class="card-subtitle">${esc(card.subtitle || '')}</div>
+          ${highlightsHTML}
           <div class="card-footer">
             <span class="card-tag">${esc(card.tag || '')}</span>
             ${linkIcon}

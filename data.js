@@ -24,17 +24,12 @@ window.__PORTFOLIO__ = {
       },
       {
         "label": "Email",
-        "url": "mailto:hinder.connect@gmail.com"
-      },
-      {
-        "label": "GitHub",
-        "url": "https://github.com/MicheleGualano"
+        "url": "mailto:michelegualano100.000@gmail.com"
       }
     ],
     "link_icons": {
       "MARA": "pieces/mara/assets/wordmark.svg",
       "LinkedIn": "https://www.google.com/s2/favicons?domain=linkedin.com&sz=128",
-      "GitHub": "https://www.google.com/s2/favicons?domain=github.com&sz=128",
       "Email": "https://www.google.com/s2/favicons?domain=gmail.com&sz=128"
     },
     "credentials": [
@@ -151,7 +146,7 @@ window.__PORTFOLIO__ = {
         "title": "MARA",
         "subtitle": "A challenge-based platform replacing CVs with proof of work. Co-founded with three teammates at H-FARM. 3 challenges shipped, 200+ students onboarded, live at marachallenge.com.",
         "tag": "2025 → present · MARA",
-        "thumbnail_asset": "pieces/mara/assets/wordmark.svg",
+        "thumbnail_asset": "pieces/mara/assets/hero.svg",
         "external_link_indicator": "live",
         "primary_link": "https://marachallenge.com",
         "theme": {
@@ -159,9 +154,23 @@ window.__PORTFOLIO__ = {
           "ink": "#FAFBFF",
           "ink_muted": "#a8b0d0",
           "accent": "#4A7BF7",
-          "border": "rgba(74,123,247,0.35)",
+          "border": "rgba(74,123,247,0.32)",
           "border_strong": "#4A7BF7",
-          "thumb_bg": "rgba(255,255,255,0.06)"
+          "thumb_bg": "rgba(255,255,255,0.04)",
+          "highlight_ink": "#FAFBFF"
+        },
+        "highlight": [
+          {
+            "label": "STARTUP"
+          },
+          {
+            "label": "PRE-ACCELERATOR · H-FARM"
+          }
+        ],
+        "decor": {
+          "src": "pieces/mara/assets/logo-white.png",
+          "position": "top-right",
+          "opacity": 0.6
         }
       },
       "interior": {
@@ -295,7 +304,7 @@ window.__PORTFOLIO__ = {
       },
       "assets": {
         "hero": {
-          "src": "pieces/mara/assets/social-frame.png",
+          "src": "pieces/mara/assets/hero.svg",
           "alt": "MARA brand visual",
           "caption": "marachallenge.com · live · 2025–"
         },
@@ -371,10 +380,166 @@ window.__PORTFOLIO__ = {
       }
     },
     {
-      "id": "voxi",
+      "id": "pre-accelerator",
       "tier": "primary",
       "ranking": {
         "display_priority": 2,
+        "affinity_score": 95
+      },
+      "card": {
+        "title": "H-FARM Pre-Accelerator",
+        "subtitle": "Fall Edition 2025 · 1 of 6 selected teams. The H-FARM Startup Center program where MARA became real — six weeks of mentorship, real pitching, and the cohort that made MARA shippable.",
+        "tag": "2025 · H-FARM Startup Center",
+        "thumbnail_asset": "pieces/pre-accelerator/assets/hero.svg",
+        "external_link_indicator": "program",
+        "primary_link": null,
+        "theme": {
+          "bg": "#1B3A2F",
+          "ink": "#F8F4E8",
+          "ink_muted": "#A8D4B0",
+          "accent": "#5FAA75",
+          "border": "rgba(95,170,117,0.30)",
+          "border_strong": "#5FAA75",
+          "thumb_bg": "rgba(255,255,255,0.04)",
+          "highlight_ink": "#F8F4E8"
+        },
+        "highlight": [
+          {
+            "label": "H-FARM STARTUP CENTER"
+          },
+          {
+            "label": "FALL EDITION 2025"
+          },
+          {
+            "label": "6 SELECTED"
+          }
+        ]
+      },
+      "interior": {
+        "headline": "The program where MARA became real.",
+        "hook": "Young minds, big startup ideas. MARA wasn't selected for the H-FARM Startup Center Pre-Accelerator as a finished company — it was selected as one of six early-stage teams trusted to build. The Fall 2025 cohort gave us the space, the mentorship, and the time we couldn't have manufactured on our own.",
+        "narrative_archetype": "growth",
+        "sections": [
+          {
+            "label": "context",
+            "title": "The program",
+            "body": "H-FARM Startup Center runs the Pre-Accelerator twice a year for student teams ready to move from idea to early validation. Fall Edition 2025 selected six teams from H-FARM College — six ideas, six brief defenses, six weeks of focused work with mentors from the H-FARM ecosystem and the wider Italian VC scene."
+          },
+          {
+            "label": "approach",
+            "title": "Cohort 2025",
+            "body": "The six selected: Eterna (funeral-provider comparison), MARA (challenge-based talent acquisition), weAltura (outdoor activities marketplace — final winner), ProFive (AI sales dashboard), FWDRI (dietary-restriction food app), Farmaterm (near-expiry pharmaceuticals marketplace), Retap (loyalty network for local businesses). Different verticals, same posture: ship something a real user would touch."
+          },
+          {
+            "label": "approach",
+            "title": "What we did inside the program",
+            "body": "Iterated MARA from concept to a workable platform shape. Defined the three-actor model (students × companies × universities), the 5-step challenge flow, the scoring rubric. Validated against the H-FARM Career Day pattern we had already lived through. Built the first version of marachallenge.com inside this window."
+          },
+          {
+            "label": "outcome",
+            "title": "Where the cohort jury landed",
+            "body": "Jury: Gabriele Conti Taguali (CEO & founder of Commercio Virtuoso), Luca De Zordo (Mechanical Engineer), Mauro Fantin (CTO at H-FARM H-ealth). Winner of the Fall Edition: weAltura. MARA didn't take the trophy that day — but went on to ship and run real events (H-ACK with Jakidale, the Lux Collective challenge) within the same six months."
+          },
+          {
+            "label": "learnings",
+            "title": "What being inside the cohort taught",
+            "body": "Two things became axioms for everything I shipped after. (1) The cohort is the asset — not the prize. Being in the room with five other teams trying to figure out the same questions in different domains compresses the learning curve more than any 1:1 mentorship. (2) Pitching is part of the work, not a separate stage. The teams that integrated feedback fast during the program were the ones that shipped after the program."
+          }
+        ],
+        "metrics_highlight": [
+          {
+            "label": "Cohort",
+            "value": "6 selected",
+            "context": "Fall Edition 2025 · H-FARM College alumni teams",
+            "confidence": "high"
+          },
+          {
+            "label": "Position",
+            "value": "MARA · selected",
+            "context": "1 of 6 · not the winner (weAltura), but the one that shipped first",
+            "confidence": "high"
+          },
+          {
+            "label": "Jury",
+            "value": "Industry + academy",
+            "context": "Conti Taguali (CV) · De Zordo (ME) · Fantin (CTO H-FARM H-ealth)",
+            "confidence": "high"
+          }
+        ],
+        "pull_quotes": [
+          {
+            "text": "The cohort is the asset, not the prize.",
+            "attribution": "self"
+          }
+        ],
+        "credits": "H-FARM Startup Center · Fall Edition 2025 · cohort of 6"
+      },
+      "visual_identity": {
+        "palette": {
+          "bg": "#1B3A2F",
+          "surface": "rgba(255,255,255,0.05)",
+          "ink": "#F8F4E8",
+          "ink_muted": "#A8D4B0",
+          "accent": "#5FAA75",
+          "accent_secondary": "#C8A96E"
+        },
+        "typography": {
+          "display_family": "'Cormorant Garamond', Georgia, serif",
+          "body_family": "'Inter', system-ui, sans-serif",
+          "mono_family": "'JetBrains Mono', monospace",
+          "display_weight": "500",
+          "hook_style": "italic",
+          "quote_style": "italic"
+        },
+        "treatment": {
+          "mood": "ivy-green-academic",
+          "density": "spacious",
+          "imagery_style": "campus / cohort"
+        },
+        "rationale": "Dark ivy-green — the H-FARM Startup Center ivy walls in the Fall Edition cover photo. Cream type for warmth. Cormorant Garamond display to read as 'institutional, not loud'."
+      },
+      "assets": {
+        "hero": {
+          "src": "pieces/pre-accelerator/assets/hero.svg",
+          "alt": "H-FARM Pre-Accelerator Fall 2025",
+          "caption": "H-FARM Startup Center · Pre-Accelerator · Fall Edition 2025"
+        },
+        "gallery": [],
+        "embeds": [
+          {
+            "type": "pdf",
+            "src": "pieces/pre-accelerator/assets/program.pdf",
+            "caption": "Pre-Accelerator Fall Edition 2025 · the 6 selected teams"
+          }
+        ]
+      },
+      "links": [],
+      "meta": {
+        "role": "Selected team — MARA cofounder",
+        "team_size": "4 (MARA team within the 6-team cohort)",
+        "duration": "Fall 2025",
+        "year": "2025",
+        "tools": [
+          "Mentorship",
+          "Pitching",
+          "Iteration"
+        ],
+        "collaborators": [
+          "Eterna",
+          "weAltura",
+          "ProFive",
+          "FWDRI",
+          "Farmaterm",
+          "Retap"
+        ],
+        "primary_or_secondary": "primary"
+      }
+    },
+    {
+      "id": "voxi",
+      "tier": "primary",
+      "ranking": {
+        "display_priority": 3,
         "affinity_score": 90
       },
       "card": {
@@ -383,7 +548,25 @@ window.__PORTFOLIO__ = {
         "tag": "2025 · H-FARM AI",
         "thumbnail_asset": "pieces/voxi/assets/hero.jpg",
         "external_link_indicator": "case",
-        "primary_link": null
+        "primary_link": null,
+        "theme": {
+          "bg": "#0F1419",
+          "ink": "#F5F5F0",
+          "ink_muted": "#9aa0a6",
+          "accent": "#FF6B35",
+          "border": "rgba(255,107,53,0.30)",
+          "border_strong": "#FF6B35",
+          "thumb_bg": "rgba(255,255,255,0.04)",
+          "highlight_ink": "#FFC940"
+        },
+        "highlight": [
+          {
+            "label": "H-FARM AI"
+          },
+          {
+            "label": "CAREER DAY 2025"
+          }
+        ]
       },
       "interior": {
         "headline": "An AI operator that calls you before you call support.",
@@ -506,16 +689,34 @@ window.__PORTFOLIO__ = {
       "id": "tekna-puglia",
       "tier": "primary",
       "ranking": {
-        "display_priority": 3,
+        "display_priority": 4,
         "affinity_score": 88
       },
       "card": {
         "title": "TEKNA · Impact for Puglia",
         "subtitle": "Two production AI integrations for an industrial automation client. An n8n agent that turns case studies and industry trends into automated content. A landing page + chatbot for their revamping vertical. Textbook 'orchestration not headcount'.",
         "tag": "2025 · Impact for Puglia × TEKNA",
-        "thumbnail_asset": "pieces/mara/assets/social-frame.png",
+        "thumbnail_asset": "pieces/tekna-puglia/assets/hero.svg",
         "external_link_indicator": "case",
-        "primary_link": null
+        "primary_link": null,
+        "theme": {
+          "bg": "#F4EFE6",
+          "ink": "#1F1A14",
+          "ink_muted": "#7A5E3E",
+          "accent": "#C45E1A",
+          "border": "rgba(196,94,26,0.35)",
+          "border_strong": "#C45E1A",
+          "thumb_bg": "rgba(196,94,26,0.06)",
+          "highlight_ink": "#1F1A14"
+        },
+        "highlight": [
+          {
+            "label": "AI ORCHESTRATION"
+          },
+          {
+            "label": "IMPACT FOR PUGLIA"
+          }
+        ]
       },
       "interior": {
         "headline": "Production AI that earns its keep — for an industrial automation client.",
@@ -619,7 +820,7 @@ window.__PORTFOLIO__ = {
       },
       "assets": {
         "hero": {
-          "src": "pieces/mara/assets/social-frame.png",
+          "src": "pieces/tekna-puglia/assets/hero.svg",
           "alt": "TEKNA · Impact for Puglia AI work",
           "caption": "Production AI integrations · 2025"
         },
@@ -648,7 +849,7 @@ window.__PORTFOLIO__ = {
       "id": "co-foundy",
       "tier": "secondary",
       "ranking": {
-        "display_priority": 4,
+        "display_priority": 5,
         "affinity_score": 75
       },
       "card": {
@@ -657,7 +858,25 @@ window.__PORTFOLIO__ = {
         "tag": "Pre-MARA · founder v1",
         "thumbnail_asset": "pieces/co-foundy/assets/favicon.png",
         "external_link_indicator": "founder",
-        "primary_link": null
+        "primary_link": null,
+        "theme": {
+          "bg": "#FBF7F2",
+          "ink": "#23201C",
+          "ink_muted": "#6B6258",
+          "accent": "#7B5D3F",
+          "border": "rgba(123,93,63,0.28)",
+          "border_strong": "#7B5D3F",
+          "thumb_bg": "rgba(123,93,63,0.06)",
+          "highlight_ink": "#3B5B3F"
+        },
+        "highlight": [
+          {
+            "label": "FOUNDER v1"
+          },
+          {
+            "label": "PRE-MARA"
+          }
+        ]
       },
       "interior": {
         "headline": "v1 of being a founder.",
@@ -780,16 +999,34 @@ window.__PORTFOLIO__ = {
       "id": "ginecogest",
       "tier": "secondary",
       "ranking": {
-        "display_priority": 5,
+        "display_priority": 6,
         "affinity_score": 65
       },
       "card": {
         "title": "GinecoGest",
         "subtitle": "A practice-management SaaS for Italian gynecologists. Apple/Stripe-grade interface, GDPR-by-design data layer, full clinical workflow (agenda · medical records · pregnancy tracking · invoices · patient portal).",
         "tag": "2025 · Solo build",
-        "thumbnail_asset": "pieces/mara/assets/social-frame.png",
+        "thumbnail_asset": "pieces/ginecogest/assets/gino.jpg",
         "external_link_indicator": "case",
-        "primary_link": null
+        "primary_link": null,
+        "theme": {
+          "bg": "#FBFCFD",
+          "ink": "#0F172A",
+          "ink_muted": "#64748B",
+          "accent": "#2563EB",
+          "border": "rgba(37,99,235,0.25)",
+          "border_strong": "#2563EB",
+          "thumb_bg": "#F1F5F9",
+          "highlight_ink": "#10B981"
+        },
+        "highlight": [
+          {
+            "label": "SOLO BUILD"
+          },
+          {
+            "label": "GDPR BY DESIGN"
+          }
+        ]
       },
       "interior": {
         "headline": "Healthcare software designed like a consumer product.",
@@ -898,11 +1135,17 @@ window.__PORTFOLIO__ = {
       },
       "assets": {
         "hero": {
-          "src": "pieces/mara/assets/social-frame.png",
+          "src": "pieces/ginecogest/assets/gino.jpg",
           "alt": "GinecoGest UI",
           "caption": "GinecoGest · practice management SaaS"
         },
-        "gallery": [],
+        "gallery": [
+          {
+            "src": "pieces/ginecogest/assets/logo.png",
+            "alt": "GinecoGest logo",
+            "caption": "Brand mark"
+          }
+        ],
         "embeds": []
       },
       "links": [],
@@ -925,7 +1168,7 @@ window.__PORTFOLIO__ = {
     }
   ],
   "metadata": {
-    "generated_at": "2026-05-25T18:47:35Z"
+    "generated_at": "2026-05-25T19:43:37Z"
   }
 };
-window.__PORTFOLIO_LOADED_AT__ = "2026-05-25T18:47:35Z";
+window.__PORTFOLIO_LOADED_AT__ = "2026-05-25T19:43:37Z";

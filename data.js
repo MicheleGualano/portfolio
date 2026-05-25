@@ -3,11 +3,11 @@ window.__PORTFOLIO__ = {
   "owner": {
     "name": "Michele Gualano",
     "display_name": "Michele Gualano",
-    "title": "Co-founder & Business Specialist, MARA · MSc International Business · H-FARM",
-    "role": "Co-founder & Business Specialist, MARA · MSc International Business · H-FARM",
+    "title": "Founder of MARA · MSc International Business · H-FARM",
+    "role": "Founder of MARA · MSc International Business · H-FARM",
     "location": "Roncade · Venice",
     "available_for": "Naitive Cohort 2026",
-    "headline": "Co-founder of MARA — a B2Education platform replacing CVs with proof of work. Building inside the H-FARM ecosystem since 2025. Marketing + business roots, AI-orchestration native.",
+    "headline": "Founder of MARA — a challenge-based hiring platform replacing the CV→ATS funnel with proof of work. Building inside the H-FARM ecosystem since 2025. Marketing + business roots, AI-orchestration native.",
     "photo_asset": "assets/profile.jpg",
     "about": [
       "Bachelor in Marketing & Business Organization at the University of Modena and Reggio Emilia (2022–2025, final grade 106/110), with an Erasmus+ semester at Universidad Carlos III de Madrid focused on international markets, management and law. Currently completing an MSc in International Business at H-FARM College in partnership with the University of Chichester (Sept 2025 – Nov 2026), where I co-founded MARA with three teammates inside the H-FARM Startup Center Pre-Accelerator.",
@@ -144,9 +144,9 @@ window.__PORTFOLIO__ = {
       },
       "card": {
         "title": "MARA",
-        "subtitle": "A challenge-based platform replacing CVs with proof of work. Co-founded with three teammates at H-FARM. 3 challenges shipped, 200+ students onboarded, live at marachallenge.com.",
+        "subtitle": "A challenge-based hiring platform: students prove their skills on real company briefs instead of fighting the CV→ATS funnel. Co-founded with three teammates at H-FARM. Live at marachallenge.com.",
         "tag": "2025 → present · MARA",
-        "thumbnail_asset": "pieces/mara/assets/hero.svg",
+        "thumbnail_asset": "pieces/mara/assets/team-cover.png",
         "external_link_indicator": "live",
         "primary_link": "https://marachallenge.com",
         "theme": {
@@ -161,21 +161,24 @@ window.__PORTFOLIO__ = {
         },
         "highlight": [
           {
-            "label": "STARTUP"
+            "label": "FOUNDER"
           },
           {
             "label": "PRE-ACCELERATOR · H-FARM"
+          },
+          {
+            "label": "LIVE"
           }
         ],
         "decor": {
-          "src": "pieces/mara/assets/logo-white.png",
+          "src": "pieces/mara/assets/wordmark.svg",
           "position": "top-right",
-          "opacity": 0.6
+          "opacity": 0.7
         }
       },
       "interior": {
         "headline": "Beyond the CV.",
-        "hook": "The CV had a good run. In a world where AI and transformative forces are constantly reshaping what work looks like, a list of past titles no longer tells you what someone can actually do. MARA was born from that disconnect — a talent-acquisition platform where companies publish real challenges, students compete to solve them in focused sprints, and the best solution wins. No CVs. Just proof of work.",
+        "hook": "MARA is a challenge-based hiring platform: students prove their skills on real company briefs instead of fighting the CV→ATS funnel. The CV had a good run — but in a world where AI is rewriting every job role and bots screen for bots, a list of past titles no longer tells you what someone can actually do. I'm the founder.",
         "narrative_archetype": "shipping",
         "sections": [
           {
@@ -184,19 +187,19 @@ window.__PORTFOLIO__ = {
             "body": "Four H-FARM College master's students — Michele Gualano, Alessandro Della Rocca, Rita Zhubi, and Alessandro Pio Alvigi — were two months into the program when the pattern became impossible to ignore. Even in a place built for entrepreneurship, the disconnect between students who could build and the companies who needed builders was a blocker. The pivot moment came at H-FARM's Career Day: students weren't handing out CVs, they were in open labs solving real company problems in real time. That was the cue. Already inside the H-FARM Startup Center Pre-Accelerator, we had the space, mentorship, and momentum to make it real."
           },
           {
+            "label": "tension",
+            "title": "The problem — measurable and accelerating",
+            "body": "The hiring funnel is breaking under its own weight, and the numbers are not opinions:\n\n• US recent-grad unemployment hit 5.7% in Q4 2025 — a 3-year high — with 41.2% underemployed (NY Fed).\n• 85% of the post-2023 rise in US unemployment is driven by new entrants (Oxford Economics).\n• Italy is worse: only 69.6% of recent graduates are employed, the lowest in the EU (Eurostat); 15.2% NEET rate, second in Europe (ISTAT).\n• LinkedIn now processes 11,000 applications/minute, +45% YoY (NYT).\n• 83% of companies screen with AI; 49% auto-reject suspected AI résumés.\n• A bad hire costs employers up to 30% of first-year salary (US DoL); 74% of employers admit to making one (CareerBuilder).\n\nBots writing for bots. MARA replaces guesswork with evidence — and the funnel is finally being rewritten."
+          },
+          {
             "label": "approach",
             "title": "How MARA works",
             "body": "A B2Education platform built on three actors. Students work on real company challenges and build a portfolio of proof, not promises. Companies find proven talent already observed under pressure. Universities activate their ecosystems and strengthen experiential learning. The flow is five steps: pre-challenge consulting, brief design, two-week sprint, jury evaluation, talent pipeline. The best solution wins, evaluated against predefined KPIs (Idea Originality, Team Dynamics, Solution Viability, Presentation Craft, Brief Coherence). All submitted work transfers as full IP to the company."
           },
           {
-            "label": "tension",
-            "title": "Proof of work, not paper claims",
-            "body": "AI and the rewriting of every job role are making a list of past experiences less and less sufficient. The unit of evidence is shifting from 'what I claim I can do' to 'what I shipped'. MARA structures that shift. The jury scores on observable signals from a real engagement, not on credentials."
-          },
-          {
             "label": "outcome",
             "title": "First time live — H-ACK × Jakidale",
-            "body": "MARA's first real test ran on H-ACK, the H-FARM hackathon co-organized with YouTuber Jakidale. The platform didn't just hold — it ran the event end-to-end: 157 participants, 30 teams, 6 judges, all operating inside the MARA workspace to manage tasks, collaborate, and submit final work. Rita's team won the 'Robot Companion' brief and received the first Soulbound credential, MARA-2026-0043. For a platform that launched just days before, that's not a pilot — that's proof of concept."
+            "body": "MARA's first real test ran on H-ACK 'Robots in Action', the H-FARM hackathon co-organized with YouTuber Jakidale (March 2026). The platform didn't just hold — it ran the event end-to-end: 157 participants, 30 teams, 6 judges, all operating inside the MARA workspace to manage tasks, collaborate, and submit final work. Rita's team won the 'Robot Companion' brief and received the first Soulbound credential, MARA-2026-0043. For a platform that launched just days before, that's not a pilot — that's proof of concept."
           },
           {
             "label": "outcome",
@@ -210,13 +213,13 @@ window.__PORTFOLIO__ = {
           },
           {
             "label": "outcome",
-            "title": "What's next",
-            "body": "H-ACK was chapter one. H-FARM College and the MARA team are extending the platform to other ongoing programs across the college; year-1 plan targets 18 challenges across three intakes. Featured by H-FARM College in April 2026 ('Beyond the CV: MARA, the platform born from the Challenges of H-FARM College'). Presented at FutureShots 2026 and partnered as technology provider at Skill Boost Lab Edition (Campus X, Naples)."
+            "title": "Featured & on the road",
+            "body": "Featured by H-FARM College in April 2026 ('Beyond the CV: MARA, the platform born from the Challenges of H-FARM College'). Presented at FutureShots 2026, the H-FARM event dedicated to technology and its effects. Partnered as technology provider at Skill Boost Lab Edition (Campus X, Naples). Year-1 plan targets 18 challenges across three intakes."
           }
         ],
         "metrics_highlight": [
           {
-            "label": "Participants H-ACK",
+            "label": "H-ACK participants",
             "value": "157",
             "context": "30 teams · 6 judges · end-to-end on MARA",
             "confidence": "high"
@@ -230,24 +233,24 @@ window.__PORTFOLIO__ = {
           {
             "label": "Cohort",
             "value": "H-FARM Pre-Accelerator",
-            "context": "Fall 2025 edition",
+            "context": "Fall 2025 · 1 of 6 selected teams",
             "confidence": "high"
           },
           {
-            "label": "Featured by",
-            "value": "H-FARM College",
-            "context": "'Beyond the CV' · April 2026",
+            "label": "Press feature",
+            "value": "Beyond the CV",
+            "context": "H-FARM College news · April 2026",
             "confidence": "high"
           }
         ],
         "pull_quotes": [
           {
-            "text": "What comes next are real companies, real challenges, and a generation of students who won't need a CV to prove their worth.",
-            "attribution": "MARA"
+            "text": "Bots writing for bots. MARA replaces guesswork with evidence.",
+            "attribution": "MARA · founder note"
           },
           {
-            "text": "Match. Ready. Action.",
-            "attribution": "MARA tagline"
+            "text": "What comes next are real companies, real challenges, and a generation of students who won't need a CV to prove their worth.",
+            "attribution": "H-FARM College · Beyond the CV"
           }
         ],
         "credits": "Co-founders: Michele Gualano · Alessandro Della Rocca · Rita Zhubi · Alessandro Pio Alvigi · marachallenge.com",
@@ -298,34 +301,30 @@ window.__PORTFOLIO__ = {
         "treatment": {
           "mood": "editorial-confident",
           "density": "spacious",
-          "imagery_style": "schematic + brand-architectural"
+          "imagery_style": "team / human"
         },
-        "rationale": "MARA design system colors — navy canvas (#1A2A57), accent blue (#4A7BF7) for emphasis, Cormorant Garamond display + Inter body. Matches the brand the platform itself uses."
+        "rationale": "MARA design system — navy canvas (#1A2A57), accent blue (#4A7BF7) for emphasis. Hero is the team photo (people > graphics), aligned to Naitive's 'we select people' framing."
       },
       "assets": {
         "hero": {
-          "src": "pieces/mara/assets/hero.svg",
-          "alt": "MARA brand visual",
-          "caption": "marachallenge.com · live · 2025–"
+          "src": "pieces/mara/assets/team-cover.png",
+          "alt": "MARA team — Rita Zhubi, Alessandro Della Rocca, Michele Gualano, Alessandro Pio Alvigi at H-FARM",
+          "caption": "The four MARA co-founders at H-FARM · their entrepreneurial journey"
         },
         "gallery": [
           {
-            "src": "pieces/mara/assets/social-partecipante.png",
-            "alt": "Soulbound credential — Partecipante",
-            "caption": "Soulbound credential template · Partecipante"
-          },
-          {
-            "src": "pieces/mara/assets/social-vincitore.png",
-            "alt": "Soulbound credential — Vincitore",
-            "caption": "Soulbound credential template · Vincitore (MARA-2026-0043 minted for the first H-ACK winner)"
-          },
-          {
-            "src": "pieces/mara/assets/social-post.jpg",
-            "alt": "MARA social",
-            "caption": "Brand surface · social"
+            "src": "pieces/mara/assets/startup-pills-card.png",
+            "alt": "Startup Pills card — MARA at H-ACK",
+            "caption": "Startup Pills × MARA · 'Beta tested during the H-ACK Robots in Action with Jakidale, March 2026'"
           }
         ],
         "embeds": [
+          {
+            "type": "link",
+            "src": "https://college.h-farm.com/en/news/beyond-the-cv-mara-the-platform-born-from-the-challenges-of-h-farm-college/",
+            "label": "H-FARM College feature — Beyond the CV: MARA, the platform born from the Challenges of H-FARM College",
+            "caption": "Press · April 2026 · the official H-FARM College article on MARA"
+          },
           {
             "type": "iframe",
             "src": "https://marachallenge.com",
@@ -359,7 +358,7 @@ window.__PORTFOLIO__ = {
         }
       ],
       "meta": {
-        "role": "Co-founder · Business Specialist",
+        "role": "Founder",
         "team_size": "4 (founding team)",
         "duration": "Sept 2025 – present",
         "year": "2025",
@@ -1275,7 +1274,7 @@ window.__PORTFOLIO__ = {
     }
   ],
   "metadata": {
-    "generated_at": "2026-05-25T20:01:29Z"
+    "generated_at": "2026-05-25T20:30:04Z"
   }
 };
-window.__PORTFOLIO_LOADED_AT__ = "2026-05-25T20:01:29Z";
+window.__PORTFOLIO_LOADED_AT__ = "2026-05-25T20:30:04Z";

@@ -1000,24 +1000,24 @@ window.__PORTFOLIO__ = {
       "tier": "secondary",
       "ranking": {
         "display_priority": 6,
-        "affinity_score": 65
+        "affinity_score": 78
       },
       "card": {
         "title": "GinecoGest",
-        "subtitle": "A practice-management SaaS for Italian gynecologists. Apple/Stripe-grade interface, GDPR-by-design data layer, full clinical workflow (agenda · medical records · pregnancy tracking · invoices · patient portal).",
-        "tag": "2025 · Solo build",
-        "thumbnail_asset": "pieces/ginecogest/assets/gino.jpg",
-        "external_link_indicator": "case",
+        "subtitle": "Il gestionale ginecologico che mette al primo posto la paziente, non la burocrazia. Tre esperienze (medico, segretaria, paziente), una sola app. Stile Apple/Stripe, GDPR-by-design.",
+        "tag": "2025 · Solo build · 3 mesi",
+        "thumbnail_asset": "pieces/ginecogest/assets/02-dashboard-medico.png",
+        "external_link_indicator": "case study",
         "primary_link": null,
         "theme": {
           "bg": "#FBFCFD",
           "ink": "#0F172A",
           "ink_muted": "#64748B",
-          "accent": "#2563EB",
-          "border": "rgba(37,99,235,0.25)",
-          "border_strong": "#2563EB",
+          "accent": "#0D9488",
+          "border": "rgba(13,148,136,0.25)",
+          "border_strong": "#0D9488",
           "thumb_bg": "#F1F5F9",
-          "highlight_ink": "#10B981"
+          "highlight_ink": "#0F766E"
         },
         "highlight": [
           {
@@ -1025,70 +1025,93 @@ window.__PORTFOLIO__ = {
           },
           {
             "label": "GDPR BY DESIGN"
+          },
+          {
+            "label": "3 ROLES · 1 APP"
           }
-        ]
+        ],
+        "decor": {
+          "src": "pieces/ginecogest/assets/logo.png",
+          "position": "top-right",
+          "opacity": 0.55
+        }
       },
       "interior": {
-        "headline": "Healthcare software designed like a consumer product.",
-        "hook": "Italian gynecology clinics juggle agenda, records, gynecological history, pregnancy tracking, invoices (Sistema TS), and the patient portal across three or four legacy tools that don't talk to each other. GinecoGest is the integrated alternative — built around the actual daily workflow of a gynecologist and a secretary.",
+        "headline": "From blank page to a full gynecology practice manager in 3 months. Apple-grade UX, GDPR-by-design.",
+        "hook": "Italian gyno clinics juggle agenda, records, billing (Sistema TS), pregnancy tracking, and patient portal across 3–4 legacy tools that don't talk to each other. GinecoGest is the integrated alternative — one app, three role-tuned interfaces (doctor · secretary · patient), built from the first wireframe with GDPR as a starting axiom, not a retrofit.",
         "narrative_archetype": "craft",
         "sections": [
           {
+            "label": "context",
+            "title": "The problem",
+            "body": "Private gyno offices in Italy fall into two traps. (A) Heavy software, feature-rich but with 2009-era UI: dense screens, forced clinical jargon, nested menus. The doctor takes years to adapt; the secretary hates it. (B) Improvised tools: Google Calendar + Word invoices + paper anamnesis. Fast but fragile, untraceable, GDPR-incompatible. The middle is empty: a modern, clean tool that respects gyno specificities (pregnancies, obstetrics, yearly follow-ups) without sacrificing the experience."
+          },
+          {
+            "label": "approach",
+            "title": "Three users, three experiences in one app",
+            "body": "The doctor wants full access — rich clinical records, fast patient switch, on-the-fly PDF reports, weekly pregnancy tracking. Works from desktop in the office and iPad in the visit room. The secretary lives in the calendar — books, reschedules, confirms, manages the waiting room, issues invoices. Does NOT have (and must not have) access to clinical records — role separation is also GDPR compliance. The patient is mobile-first: next appointment, last report download, next booking in 3 steps. Doesn't want to install an app from the store, doesn't want complex account creation."
+          },
+          {
+            "label": "approach",
+            "title": "Six design decisions",
+            "body": "(1) One app, three interfaces — role detected at login, UI shapeshifts. Secretary never sees 'Invoices' nor 'Medical Record'. Conditional routing + lazy loading. (2) Mobile-first for the patient portal as a PWA (bottom tab bar, native gestures, iOS-style animations); desktop-first for the back office where you work 8h/day. (3) Privacy-by-design: no third-party trackers ever, clinical data lives locally (isolated localStorage per domain), Service Worker caches only static assets, role determines data visibility. (4) White space IS a feature — every row 16-20px padding, primary color (teal 600/700) used on max 5% of the visible area. References: Stripe Dashboard, Apple Mail, Linear. (5) Micro-interactions as quality signal — every state has a transition (hover, click, page change), 150-350ms with Apple's `[0.25, 0.1, 0.25, 1]` easing. (6) Cmd+K command palette (Linear/Vercel pattern) — search a patient, jump to a section, indispensable for the 8h/day user."
+          },
+          {
             "label": "tension",
-            "title": "Two non-negotiables that fight each other",
-            "body": "(1) Interface had to feel premium — Apple/Stripe-tier spacing and typography, because doctors compare it to consumer apps, not to industry software. (2) Data layer had to be GDPR-compliant for sensitive health data: audit trails, retention rules, role-based access. Beautiful and compliant rarely coexist in this category; that was the brief."
-          },
-          {
-            "label": "approach",
-            "title": "How it's built",
-            "body": "React + TypeScript + Vite SPA. Firebase auth, Firestore data, with firestore.rules enforcing per-role per-document access. Components scoped by clinical domain (Agenda, MedicalRecord, GynecologicalHistory, PregnancyCard, Invoices, Riba, WaitingQueue, PatientPortal, SecretaryDashboard). Onboarding tour built in so a new clinic can self-serve setup. Tailwind + shadcn/ui."
-          },
-          {
-            "label": "approach",
-            "title": "Italian healthcare specifics",
-            "body": "Real requirements baked in or scoped in the production roadmap: Sistema TS billing for the 730 precompilato, electronic invoicing for SDI, RIBA payment flow, audit log for GDPR, anonymization after 10 years of inactivity. Not aspirational — mapped to concrete integrations (FattureInCloud, Aruba)."
+            "title": "The hard parts",
+            "body": "Three challenges + solutions worth showing. (A) Three roles, three onboarding tours — data-driven tour system, one component, three datasets (SEGRETARIA_STEPS, MEDICO_STEPS, PAZIENTE_STEPS), localStorage flag per role, replay always available from sidebar. The last step always teaches Cmd+K, the productivity multiplier. (B) Rich medical record without becoming a maze — internal tabs (Anamnesis General · Gynecological · Pregnancy · Past Visits · Documents). The Pregnancy tab appears ONLY if the patient has an active obstetric record. Progressive disclosure. (C) Service Worker serving stale JS (classic PWA bug) — network-first for app code (JS/CSS/HTML), cache-first only for static assets (images, fonts). 'Reset cache' button in the ErrorBoundary for edge cases. SW de-registered automatically in dev mode."
           },
           {
             "label": "outcome",
-            "title": "Current state",
-            "body": "Working app with the full clinical workflow. Production roadmap maps residual integrations (2FA, SMS reminders, FEA digital signature, telemedicine) to clear scope."
+            "title": "What's shipped",
+            "body": "12 main screens, all responsive. 24 demo appointments distributed over 10 days with realistic statuses (completed / in waiting room / scheduled). 10 demo patients with complete clinical anamnesis, visit history, active pregnancies. Medical records with 5 navigable tabs. Client-side PDF report generation (no server calls). PWA installable on the patient portal. Three-role onboarding tour, replayable anytime. Command palette (Cmd+K) for fast navigation. Service Worker with correct cache versioning."
           },
           {
             "label": "learnings",
-            "title": "What this taught me",
-            "body": "Compliance constraints don't have to compromise UX — they have to be designed for from the first wireframe. Adding GDPR to a finished product is rebuild-the-product expensive. Adding it before the first component is a one-line policy decision."
+            "title": "What I'd do differently",
+            "body": "Honest reflections after development. (1) URL-based routing — today navigation is state-based (currentView as React state); a real router (TanStack Router or React Router) would give deep URLs, browser history, deep linking. Soon. (2) Real auth — today login is a demo role pick; production needs auth (probably Firebase Auth or Clerk) with OTP for the patient, strong password for doctor/secretary, MFA. (3) Hosted backend — local SQLite doesn't scale across clinics; Postgres on Supabase keeping the current schema. (4) Data model separated from UI — today store.tsx mixes too much; would extract types to a package and add Zod for runtime validation. (5) E2E tests with Playwright — the portfolio screenshot setup is the first step; same script converts to real E2E tests with assertions."
           }
         ],
         "metrics_highlight": [
           {
-            "label": "Domain components",
-            "value": "14+",
-            "context": "Agenda · MedicalRecord · GynecologicalHistory · PregnancyCard · Invoices · Riba · WaitingQueue · PatientPortal · SecretaryDashboard …",
+            "label": "Main screens",
+            "value": "12",
+            "context": "all responsive, screenshotted, polished",
             "confidence": "high"
           },
           {
-            "label": "Compliance posture",
-            "value": "GDPR by design",
-            "context": "audit trail · role-based access via firestore.rules · retention rules",
+            "label": "Build time",
+            "value": "3 months",
+            "context": "from blank page to demo-ready, solo",
             "confidence": "high"
           },
           {
-            "label": "Stack",
-            "value": "React + Firebase",
-            "context": "Vite · Firestore · Tailwind · shadcn/ui",
+            "label": "Demo data",
+            "value": "10 patients · 24 appointments",
+            "context": "realistic seed: anamnesis · pregnancies · invoice history",
+            "confidence": "high"
+          },
+          {
+            "label": "Compliance",
+            "value": "GDPR-by-design",
+            "context": "Reg. UE 2016/679 · no trackers · local-only clinical data · role-based visibility",
             "confidence": "high"
           }
         ],
         "pull_quotes": [
           {
-            "text": "Healthcare software for Italian clinics is usually a hospital intranet from 2009. This one wasn't designed that way.",
+            "text": "Mostrare che è possibile fare un gestionale medicale bello da usare. Le regole sono semplici: rispettare il tempo dell'utente, ridurre il numero di click sui task frequenti, separare i ruoli, prendere sul serio GDPR. Il resto è esecuzione.",
+            "attribution": "self"
+          },
+          {
+            "text": "White space IS a feature.",
             "attribution": "self"
           }
         ],
-        "credits": "Solo build. Brief, architecture, design, and implementation: mine.",
+        "credits": "Solo build · brief, architecture, design, implementation, screenshots: mine.",
         "stack": [
           {
-            "label": "React",
+            "label": "React 19",
             "category": "framework"
           },
           {
@@ -1096,16 +1119,44 @@ window.__PORTFOLIO__ = {
             "category": "framework"
           },
           {
-            "label": "Firebase / Firestore",
+            "label": "Vite 6",
+            "category": "framework"
+          },
+          {
+            "label": "Tailwind CSS v4",
+            "category": "framework"
+          },
+          {
+            "label": "Motion (Framer)",
+            "category": "ui"
+          },
+          {
+            "label": "Lucide",
+            "category": "ui"
+          },
+          {
+            "label": "Recharts",
+            "category": "ui"
+          },
+          {
+            "label": "jsPDF + autotable",
+            "category": "tool"
+          },
+          {
+            "label": "SQLite (better-sqlite3)",
             "category": "data"
           },
           {
-            "label": "Tailwind",
-            "category": "framework"
+            "label": "Express",
+            "category": "data"
           },
           {
-            "label": "shadcn/ui",
-            "category": "framework"
+            "label": "Vitest + Testing Library",
+            "category": "tool"
+          },
+          {
+            "label": "PWA · Service Worker",
+            "category": "platform"
           }
         ]
       },
@@ -1115,7 +1166,7 @@ window.__PORTFOLIO__ = {
           "surface": "#F1F5F9",
           "ink": "#0F172A",
           "ink_muted": "#64748B",
-          "accent": "#2563EB",
+          "accent": "#0D9488",
           "accent_secondary": "#10B981"
         },
         "typography": {
@@ -1129,38 +1180,94 @@ window.__PORTFOLIO__ = {
         "treatment": {
           "mood": "clinical-premium",
           "density": "spacious",
-          "imagery_style": "ui-screenshot / product-shot"
+          "imagery_style": "ui-screenshot"
         },
-        "rationale": "Stripe-inspired blue + discreet medical-green secondary. All-Inter typography mirrors the product's UI — no display serif, the cleanliness IS the signal."
+        "rationale": "Teal-600/700 accent — the actual product accent. All-Inter typography mirrors the app. White space IS the design — the calm signals trust in a medical context."
       },
       "assets": {
         "hero": {
-          "src": "pieces/ginecogest/assets/gino.jpg",
-          "alt": "GinecoGest UI",
-          "caption": "GinecoGest · practice management SaaS"
+          "src": "pieces/ginecogest/assets/02-dashboard-medico.png",
+          "alt": "GinecoGest doctor dashboard",
+          "caption": "Doctor dashboard · the most-used screen, where the 8-hour day lives"
         },
         "gallery": [
           {
-            "src": "pieces/ginecogest/assets/logo.png",
-            "alt": "GinecoGest logo",
-            "caption": "Brand mark"
+            "src": "pieces/ginecogest/assets/01-login.png",
+            "alt": "Login screen",
+            "caption": "Login · role pick (medico / segretaria / paziente)"
+          },
+          {
+            "src": "pieces/ginecogest/assets/02-dashboard-medico.png",
+            "alt": "Doctor dashboard",
+            "caption": "Doctor dashboard"
+          },
+          {
+            "src": "pieces/ginecogest/assets/03-agenda.png",
+            "alt": "Agenda",
+            "caption": "Agenda · weekly view, drag-to-reschedule, hover states for status"
+          },
+          {
+            "src": "pieces/ginecogest/assets/04-sala-attesa.png",
+            "alt": "Waiting room",
+            "caption": "Waiting room · live status of who's in / who's next"
+          },
+          {
+            "src": "pieces/ginecogest/assets/05-pazienti.png",
+            "alt": "Patients list",
+            "caption": "Patients · searchable list, all anamnesis flags at a glance"
+          },
+          {
+            "src": "pieces/ginecogest/assets/06-cartella-marta-neri.png",
+            "alt": "Medical record - patient with active pregnancy",
+            "caption": "Medical record · Marta Neri (active pregnancy — Pregnancy tab visible)"
+          },
+          {
+            "src": "pieces/ginecogest/assets/07-cartella-elena-marino.png",
+            "alt": "Medical record - no pregnancy",
+            "caption": "Medical record · Elena Marino (no active pregnancy — Pregnancy tab hidden, progressive disclosure)"
+          },
+          {
+            "src": "pieces/ginecogest/assets/08-fatture.png",
+            "alt": "Invoices",
+            "caption": "Invoices · Sistema TS-ready, Ri.Ba., quick filters"
+          },
+          {
+            "src": "pieces/ginecogest/assets/09-registro-incassi.png",
+            "alt": "Revenue dashboard",
+            "caption": "Revenue register · interactive Recharts plots, drill-down by period"
+          },
+          {
+            "src": "pieces/ginecogest/assets/10-portale-paziente-home.png",
+            "alt": "Patient portal home",
+            "caption": "Patient portal home · PWA, mobile-first, bottom tab bar"
+          },
+          {
+            "src": "pieces/ginecogest/assets/11-portale-paziente-referti.png",
+            "alt": "Patient portal - reports",
+            "caption": "Patient portal · downloadable PDF reports"
+          },
+          {
+            "src": "pieces/ginecogest/assets/12-onboarding-tour.png",
+            "alt": "Onboarding tour",
+            "caption": "Onboarding tour · role-specific, spring-physics spotlight, ends teaching Cmd+K"
           }
         ],
         "embeds": []
       },
       "links": [],
       "meta": {
-        "role": "Solo founder · designer · developer",
+        "role": "Solo · founder · designer · developer",
         "team_size": "1",
-        "duration": "2025–present",
+        "duration": "3 months · 2025",
         "year": "2025",
         "tools": [
-          "React",
+          "React 19",
           "TypeScript",
-          "Vite",
-          "Firebase / Firestore",
-          "Tailwind",
-          "shadcn/ui"
+          "Vite 6",
+          "Tailwind v4",
+          "Motion",
+          "SQLite",
+          "PWA"
         ],
         "collaborators": [],
         "primary_or_secondary": "secondary"
@@ -1168,7 +1275,7 @@ window.__PORTFOLIO__ = {
     }
   ],
   "metadata": {
-    "generated_at": "2026-05-25T19:43:37Z"
+    "generated_at": "2026-05-25T20:01:29Z"
   }
 };
-window.__PORTFOLIO_LOADED_AT__ = "2026-05-25T19:43:37Z";
+window.__PORTFOLIO_LOADED_AT__ = "2026-05-25T20:01:29Z";

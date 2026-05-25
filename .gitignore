@@ -1,0 +1,57 @@
+# ============================================================
+# Portfolio Architect — .gitignore
+# Generated 2026-05-25
+#
+# What lives in the repo: viewer + data + published pieces.
+# What stays local-only: CV, audit/strategy docs, raw materials,
+# history backups, OS metadata.
+# ============================================================
+
+# --- macOS / system noise --------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+
+# --- Editor / IDE noise ----------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Private: CV (contains personal data — photo, phone, email)
+cv/
+
+# --- Private: application strategy ------------------------------
+# Narrative, essay drafts, application-context (criteria/motivation/pushback).
+# These are internal — the public site shows the work, not the strategy.
+application/
+application-context.json
+
+# --- Private: raw source materials for each experience ----------
+# Decks, screenshots, voice notes, source repos — often pre-launch / NDA.
+# Only the FINISHED piece (under pieces/) goes public.
+experiences/
+
+# --- Private: local backups + deploy bundles --------------------
+history/
+exports/
+
+# --- Backups of the portfolio itself ---------------------------
+*.backup/
+*.backup.*/
+
+# --- Large media defaults (review before un-ignoring) ----------
+# Uncomment if you want to keep media out of the repo by default.
+# Hosting large videos on GitHub Pages eats bandwidth — better via
+# YouTube/Vimeo embed or external CDN.
+# *.mov
+# *.mp4
+
+# --- Node / dev artifacts (in case we add tooling later) -------
+node_modules/
+.env
+.env.local
+*.log

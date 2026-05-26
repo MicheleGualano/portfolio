@@ -5,8 +5,7 @@
     "title": "Founder of MARA · MSc International Business · H-FARM",
     "role": "Founder of MARA · MSc International Business · H-FARM",
     "location": "Roncade · Venice",
-    "available_for": "Naitive Cohort 2026",
-    "headline": "Founder of MARA — a challenge-based hiring platform replacing the CV→ATS funnel with proof of work. Building inside the H-FARM ecosystem since 2025. Marketing + business roots, AI-orchestration native.",
+    "headline": "Founder of MARA — a challenge-based hiring platform replacing the CV with proof of work. Built inside the H-FARM ecosystem, AI-orchestration native.",
     "photo_asset": "assets/profile.jpg",
     "about": [
       "Bachelor in Marketing & Business Organization at the University of Modena and Reggio Emilia (2022–2025, final grade 106/110), with an Erasmus+ semester at Universidad Carlos III de Madrid focused on international markets, management and law. Currently completing an MSc in International Business at H-FARM College in partnership with the University of Chichester (Sept 2025 – Nov 2026), where I co-founded MARA with three teammates inside the H-FARM Startup Center Pre-Accelerator.",
@@ -1002,8 +1001,8 @@
       },
       "card": {
         "title": "GinecoGest",
-        "subtitle": "Il gestionale ginecologico che mette al primo posto la paziente, non la burocrazia. Tre esperienze (medico, segretaria, paziente), una sola app. Stile Apple/Stripe, GDPR-by-design.",
-        "tag": "2025 · Solo build · 3 mesi",
+        "subtitle": "The gynecology practice manager that puts the patient first, not the bureaucracy. Three experiences (doctor, secretary, patient), one app. Apple/Stripe-grade UX, GDPR-by-design.",
+        "tag": "2025 · Solo build · 3 months",
         "thumbnail_asset": "pieces/ginecogest/assets/02-dashboard-medico.png",
         "external_link_indicator": "case study",
         "primary_link": null,
@@ -1098,7 +1097,7 @@
         ],
         "pull_quotes": [
           {
-            "text": "Mostrare che è possibile fare un gestionale medicale bello da usare. Le regole sono semplici: rispettare il tempo dell'utente, ridurre il numero di click sui task frequenti, separare i ruoli, prendere sul serio GDPR. Il resto è esecuzione.",
+            "text": "Healthcare software for Italian clinics can be beautiful to use. The rules are simple: respect the user's time, reduce clicks on the frequent tasks, separate the roles, take GDPR seriously. The rest is execution.",
             "attribution": "self"
           },
           {
@@ -1273,6 +1272,6 @@
     }
   ],
   "metadata": {
-    "generated_at": "2026-05-26T08:56:02Z"
+    "generated_at": "2026-05-26T09:26:53Z"
   }
 }

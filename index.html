@@ -381,21 +381,37 @@
     .modal-scroll::-webkit-scrollbar { width: 8px; }
     .modal-scroll::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 99px; }
 
-    /* HERO — branded full-width inside modal */
+    /* HERO — branded full-width inside modal, image always whole (no crop) */
     .modal-hero {
       width: 100%;
-      aspect-ratio: 21 / 9;
-      background: var(--piece-surface, rgba(0, 0, 0, 0.04));
+      background: var(--piece-bg, rgba(0, 0, 0, 0.04));
       overflow: hidden;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+      max-height: 70vh;
     }
-    .modal-hero img, .modal-hero svg { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .modal-hero img, .modal-hero svg {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      max-height: 70vh;
+      height: auto;
+      object-fit: contain;
+    }
     .modal-hero-caption {
       position: absolute; bottom: 14px; left: 22px; right: 22px;
       font-size: 12px; color: rgba(255,255,255,0.85);
-      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+      text-shadow: 0 1px 6px rgba(0,0,0,0.7);
       font-family: var(--piece-font-mono, monospace);
       letter-spacing: 0.06em;
+      pointer-events: none;
+      z-index: 2;
+      padding: 8px 12px;
+      background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0));
+      border-radius: 8px;
     }
 
     .modal-content {

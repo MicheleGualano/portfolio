@@ -699,14 +699,14 @@ window.__PORTFOLIO__ = {
         "external_link_indicator": "case",
         "primary_link": null,
         "theme": {
-          "bg": "#F4EFE6",
-          "ink": "#1F1A14",
-          "ink_muted": "#7A5E3E",
-          "accent": "#C45E1A",
-          "border": "rgba(196,94,26,0.35)",
-          "border_strong": "#C45E1A",
-          "thumb_bg": "rgba(196,94,26,0.06)",
-          "highlight_ink": "#1F1A14"
+          "bg": "#C40000",
+          "ink": "#FFFFFF",
+          "ink_muted": "#FFD9D9",
+          "accent": "#FFFFFF",
+          "border": "rgba(255,255,255,0.30)",
+          "border_strong": "#FFFFFF",
+          "thumb_bg": "rgba(255,255,255,0.06)",
+          "highlight_ink": "#FFFFFF"
         },
         "highlight": [
           {
@@ -795,27 +795,27 @@ window.__PORTFOLIO__ = {
       },
       "visual_identity": {
         "palette": {
-          "bg": "#F4EFE6",
-          "surface": "rgba(140, 80, 40, 0.06)",
-          "ink": "#1F1A14",
-          "ink_muted": "#6E5E48",
-          "accent": "#C45E1A",
-          "accent_secondary": "#1F3B36"
+          "bg": "#C40000",
+          "surface": "rgba(255,255,255,0.06)",
+          "ink": "#FFFFFF",
+          "ink_muted": "#FFD9D9",
+          "accent": "#FFFFFF",
+          "accent_secondary": "#E30613"
         },
         "typography": {
-          "display_family": "'Fraunces', 'Newsreader', Georgia, serif",
+          "display_family": "'Inter', -apple-system, system-ui, sans-serif",
           "body_family": "'Inter', system-ui, sans-serif",
           "mono_family": "'JetBrains Mono', monospace",
-          "display_weight": "500",
+          "display_weight": "900",
           "hook_style": "normal",
           "quote_style": "italic"
         },
         "treatment": {
-          "mood": "industrial-warm",
+          "mood": "industrial-red-tekna",
           "density": "structured",
-          "imagery_style": "diagram / system"
+          "imagery_style": "industrial / wordmark"
         },
-        "rationale": "Sand + Apulian terracotta — Puglia regional anchor with industrial register. Fraunces display for the considered argument; Inter body for the operational detail."
+        "rationale": "TEKNA Automazione & Controllo real brand: bright red (#C40000) + white wordmark. Sourced directly from teknautomazione.it. Industrial automation since 1994 — the register is bold and B2B."
       },
       "assets": {
         "hero": {
@@ -855,18 +855,18 @@ window.__PORTFOLIO__ = {
         "title": "Co-Foundy",
         "subtitle": "A networking app matching students with ideas to students with technical skills. My first founder attempt — shipped, learned, pivoted toward what would become MARA.",
         "tag": "Pre-MARA · founder v1",
-        "thumbnail_asset": "pieces/co-foundy/assets/favicon.png",
+        "thumbnail_asset": "pieces/co-foundy/assets/cover.svg",
         "external_link_indicator": "founder",
         "primary_link": null,
         "theme": {
-          "bg": "#FBF7F2",
-          "ink": "#23201C",
-          "ink_muted": "#6B6258",
-          "accent": "#7B5D3F",
-          "border": "rgba(123,93,63,0.28)",
-          "border_strong": "#7B5D3F",
-          "thumb_bg": "rgba(123,93,63,0.06)",
-          "highlight_ink": "#3B5B3F"
+          "bg": "#1158F5",
+          "ink": "#FFFFFF",
+          "ink_muted": "#BFD3FF",
+          "accent": "#FFFFFF",
+          "border": "rgba(255,255,255,0.30)",
+          "border_strong": "#FFFFFF",
+          "thumb_bg": "rgba(255,255,255,0.06)",
+          "highlight_ink": "#FFFFFF"
         },
         "highlight": [
           {
@@ -943,33 +943,33 @@ window.__PORTFOLIO__ = {
       },
       "visual_identity": {
         "palette": {
-          "bg": "#FBF7F2",
-          "surface": "rgba(80, 60, 40, 0.05)",
-          "ink": "#23201C",
-          "ink_muted": "#6B6258",
-          "accent": "#7B5D3F",
-          "accent_secondary": "#3B5B3F"
+          "bg": "#1158F5",
+          "surface": "rgba(255,255,255,0.06)",
+          "ink": "#FFFFFF",
+          "ink_muted": "#BFD3FF",
+          "accent": "#FFC940",
+          "accent_secondary": "#FFFFFF"
         },
         "typography": {
-          "display_family": "'Newsreader', Georgia, serif",
+          "display_family": "'Inter', -apple-system, system-ui, sans-serif",
           "body_family": "'Inter', system-ui, sans-serif",
           "mono_family": "'JetBrains Mono', monospace",
-          "display_weight": "400",
+          "display_weight": "800",
           "hook_style": "italic",
           "quote_style": "italic"
         },
         "treatment": {
-          "mood": "honest-archive",
+          "mood": "founder-v1-bold-blue",
           "density": "spacious",
-          "imagery_style": "scrapbook"
+          "imagery_style": "wordmark / brand"
         },
-        "rationale": "Warm cream + earth tones — this is the prequel, the lesson, the honest archive. Not loud. Not polished beyond the truth."
+        "rationale": "Co-Foundy brand: vibrant blue + white wordmark + TM. The v1 founder identity was bold, optimistic, fast — captured here without nostalgia."
       },
       "assets": {
         "hero": {
-          "src": "pieces/co-foundy/assets/favicon.png",
-          "alt": "Co-Foundy",
-          "caption": "Co-Foundy · founder v1"
+          "src": "pieces/co-foundy/assets/cover.svg",
+          "alt": "Co-Foundy™ wordmark on the brand blue",
+          "caption": "Co-Foundy™ · founder v1 · 2024"
         },
         "gallery": [],
         "embeds": [
@@ -1274,7 +1274,7 @@ window.__PORTFOLIO__ = {
     }
   ],
   "metadata": {
-    "generated_at": "2026-05-26T08:35:29Z"
+    "generated_at": "2026-05-26T08:56:02Z"
   }
 };
-window.__PORTFOLIO_LOADED_AT__ = "2026-05-26T08:35:29Z";
+window.__PORTFOLIO_LOADED_AT__ = "2026-05-26T08:56:02Z";

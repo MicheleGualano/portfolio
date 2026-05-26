@@ -1851,7 +1851,8 @@
   </div>
 </section>
 
-<!-- Modals -->
+<!-- Overlay with modals inside -->
+<div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
 <div class="modal" id="modal-mara">
     <button class="modal-close" onclick="closeModal()">✕</button>
     <span class="modal-tag">2025 → present · MARA</span>
@@ -2209,9 +2210,7 @@ Bots writing for bots. MARA replaces guesswork with evidence — and the funnel 
     </div>
     <p class="modal-credits">Solo build · brief, architecture, design, implementation, screenshots: mine.</p>
   </div>
-
-<!-- Overlay -->
-<div id="overlay" onclick="closeModal()"></div>
+</div>
 
 <script>
 

@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Michele Gualano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&display=swap" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --shell-bg: #fafaf8;
+      --shell-surface: #ffffff;
+      --shell-ink: #0c0c0c;
+      --shell-ink-muted: #6b6b68;
+      --shell-ink-faint: #9a9a96;
+      --shell-border: #e8e8e6;
+      --shell-border-strong: #d0d0cc;
+      --shell-accent: #0c0c0c;
+      --radius: 14px;
+      --radius-sm: 10px;
+    }
+
+    html, body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      color: var(--shell-ink);
+      background: var(--shell-bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "ss01", "cv11";
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    button { font-family: inherit; font-size: inherit; color: inherit; }
+
+    /* ============================================================
+       PROFILE HEADER — sober, but human
+       ============================================================ */
+    header.shell-header {
+      padding: 80px 64px 36px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .owner-grid {
+      display: grid;
+      grid-template-columns: 128px 1fr auto;
+      gap: 36px;
+      align-items: start;
+    }
+    .owner-avatar {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1A2A57 0%, #4A7BF7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 44px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .owner-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .owner-main { min-width: 0; padding-top: 6px; }
+    .owner-name {
+      font-family: "Cormorant Garamond", "Inter", serif;
+      font-size: 52px;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      margin-bottom: 4px;
+      line-height: 1.0;
+      color: var(--shell-ink);
+    }
+    .owner-role {
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 14.5px;
+      color: var(--shell-ink-muted);
+      margin-bottom: 18px;
+      letter-spacing: 0.01em;
+    }
+    .owner-role .dot { opacity: 0.4; margin: 0 8px; font-weight: 600; }
+    .owner-headline {
+      font-family: "Cormorant Garamond", "Inter", serif;
+      font-style: italic;
+      font-size: 20px;
+      max-width: 680px;
+      color: var(--shell-ink);
+      opacity: 0.86;
+      line-height: 1.45;
+      letter-spacing: -0.005em;
+    }
+    .owner-links {
+      margin-top: 22px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .owner-link {
+      font-size: 12.5px;
+      color: var(--shell-ink-muted);
+      text-decoration: none;
+      border: 1px solid var(--shell-border);
+      padding: 6px 13px;
+      border-radius: 99px;
+      transition: border-color 0.18s, color 0.18s, background 0.18s, transform 0.18s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.01em;
+    }
+    .owner-link:hover {
+      color: var(--shell-ink);
+      border-color: var(--shell-ink);
+      background: var(--shell-surface);
+      transform: translateY(-1px);
+    }
+    .owner-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: right;
+      font-size: 12px;
+      color: var(--shell-ink-faint);
+      padding-top: 6px;
+    }
+    .owner-stat-row { display: flex; align-items: baseline; gap: 6px; justify-content: flex-end; }
+    .owner-stat-value { color: var(--shell-ink); font-weight: 600; font-size: 13px; }
+
+    .owner-divider {
+      max-width: 1200px;
+      margin: 0 auto 32px;
+      padding: 0 64px;
+    }
+    .owner-divider::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: var(--shell-border);
+    }
+
+    /* ============================================================
+       FILTER ROW
+       ============================================================ */
+    .filter-row {
+      padding: 0 64px;
+      max-width: 1200px;
+      margin: 0 auto 22px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 13px;
+      color: var(--shell-ink-muted);
+    }
+    .filter-section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--shell-ink-faint);
+      margin-right: 14px;
+    }
+    .filter-chip {
+      background: transparent;
+      border: 1px solid var(--shell-border);
+      border-radius: 99px;
+      padding: 5px 14px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.12s;
+      color: var(--shell-ink-muted);
+    }
+    .filter-chip:hover { border-color: var(--shell-ink); color: var(--shell-ink); }
+    .filter-chip.active {
+      background: var(--shell-ink);
+      color: #fff;
+      border-color: var(--shell-ink);
+    }
+    .filter-meta { margin-left: auto; font-size: 12px; color: var(--shell-ink-faint); }
+
+    main {
+      padding: 0 64px 96px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    /* ============================================================
+       CARD — per-piece theming via card.theme CSS vars
+       ============================================================ */
+    .card {
+      position: relative;
+      background: var(--card-bg, var(--shell-surface));
+      color: var(--card-ink, var(--shell-ink));
+      border: 1px solid var(--card-border, var(--shell-border));
+      border-radius: 16px;
+      padding: 22px;
+      cursor: pointer;
+      transition: border-color 0.22s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 240px;
+      overflow: hidden;
+    }
+    .card::after {
+      content: "";
+      position: absolute; inset: 0;
+      border-radius: 16px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .card:hover {
+      border-color: var(--card-border-strong, var(--shell-border-strong));
+      transform: translateY(-4px);
+      box-shadow:
+        0 18px 42px rgba(0, 0, 0, 0.10),
+        0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .card-decor {
+      position: absolute;
+      pointer-events: none;
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .card-decor.top-left { top: 16px; left: 16px; }
+    .card-decor.top-right { top: 16px; right: 16px; }
+    .card-decor.bottom-left { bottom: 16px; left: 16px; }
+    .card-decor.bottom-right { bottom: 16px; right: 16px; }
+    .card-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--card-thumb-bg, #f0f0ed);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--card-ink-muted, var(--shell-ink-faint));
+      font-size: 11.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      position: relative;
+    }
+    .card-thumb img, .card-thumb svg {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card:hover .card-thumb img,
+    .card:hover .card-thumb svg {
+      transform: scale(1.035);
+    }
+    .card-title {
+      font-family: "Cormorant Garamond", "Inter", serif;
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      color: var(--card-ink, var(--shell-ink));
+    }
+    .card-subtitle {
+      font-size: 13.5px;
+      color: var(--card-ink-muted, var(--shell-ink-muted));
+      flex: 1;
+      margin-bottom: 16px;
+      line-height: 1.55;
+    }
+    .card-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .card-highlight-badge {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      border-radius: 99px;
+      border: 1px solid var(--card-border-strong, var(--card-accent, var(--shell-border-strong)));
+      color: var(--card-highlight-ink, var(--card-ink, var(--shell-ink)));
+      font-weight: 600;
+      background: transparent;
+    }
+    .card-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 10.5px;
+      color: var(--card-ink-muted, var(--shell-ink-faint));
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding-top: 14px;
+      border-top: 1px solid var(--card-border, rgba(0,0,0,0.08));
+    }
+    .card-tag {
+      font-weight: 600;
+      color: var(--card-accent, var(--card-ink-muted, var(--shell-ink-faint)));
+    }
+    .card-link-indicator {
+      opacity: 0.92;
+      color: var(--card-accent, var(--card-ink, var(--shell-ink-faint)));
+      font-weight: 700;
+    }
+
+    .empty {
+      grid-column: 1 / -1; padding: 64px 32px; text-align: center; color: var(--shell-ink-faint);
+    }
+    .empty h2 { font-size: 18px; color: var(--shell-ink-muted); margin-bottom: 8px; font-weight: 500; }
+    .empty code { background: #fff; padding: 2px 7px; border-radius: 4px; border: 1px solid var(--shell-border); font-size: 13px; }
+
+    /* ============================================================
+       MODAL — large centered, blurred backdrop (NOT fullscreen)
+       ============================================================ */
+    .modal-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(20, 20, 24, 0.55);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s ease;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4vh 4vw;
+    }
+    .modal-backdrop.open { opacity: 1; pointer-events: auto; }
+
+    .modal {
+      width: 100%;
+      max-width: 1160px;
+      max-height: 92vh;
+      background: var(--piece-bg, #ffffff);
+      color: var(--piece-ink, #0c0c0c);
+      font-family: var(--piece-font-body, "Inter", -apple-system, BlinkMacSystemFont, sans-serif);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow:
+        0 32px 100px rgba(0, 0, 0, 0.38),
+        0 8px 24px rgba(0, 0, 0, 0.18),
+        0 1px 0 rgba(255,255,255,0.04) inset;
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.34s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .modal-backdrop.open .modal { transform: translateY(0) scale(1); }
+
+    /* project-branded accent strip */
+    .modal-strip {
+      height: 5px;
+      background: linear-gradient(90deg, var(--piece-accent, #0c0c0c) 0%, var(--piece-accent-secondary, var(--piece-accent, #0c0c0c)) 100%);
+      flex-shrink: 0;
+    }
+
+    .modal-topbar {
+      position: sticky; top: 0; z-index: 5;
+      padding: 16px 28px;
+      background: var(--piece-bg-blur, rgba(255, 255, 255, 0.94));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--piece-border, rgba(0, 0, 0, 0.08));
+      flex-shrink: 0;
+    }
+    .modal-topbar-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+    .modal-topbar-title {
+      font-family: var(--piece-font-display, inherit);
+      font-weight: var(--piece-display-weight, 600);
+      font-size: 17px;
+      letter-spacing: -0.01em;
+      color: var(--piece-ink, #0c0c0c);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .modal-tag {
+      font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--piece-accent, var(--piece-ink-muted));
+      font-weight: 600;
+      padding: 4px 10px;
+      border: 1px solid var(--piece-accent, var(--piece-border));
+      border-radius: 99px;
+    }
+    .modal-close {
+      background: transparent;
+      border: 1px solid var(--piece-border, rgba(0, 0, 0, 0.18));
+      color: var(--piece-ink, #0c0c0c);
+      border-radius: 8px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.15s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .modal-close:hover {
+      border-color: var(--piece-accent, var(--piece-ink));
+      background: var(--piece-surface, rgba(0, 0, 0, 0.03));
+    }
+
+    .modal-scroll {
+      overflow-y: auto;
+      overflow-x: hidden;
+      flex: 1;
+      scrollbar-width: thin;
+      scrollbar-color: var(--piece-ink-muted, rgba(0,0,0,0.2)) transparent;
+    }
+    .modal-scroll::-webkit-scrollbar { width: 8px; }
+    .modal-scroll::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 99px; }
+
+    /* HERO — branded full-width inside modal, image always whole (no crop) */
+    .modal-hero {
+      width: 100%;
+      background: var(--piece-bg, rgba(0, 0, 0, 0.04));
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+      max-height: 70vh;
+    }
+    .modal-hero img, .modal-hero svg {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      max-height: 70vh;
+      height: auto;
+      object-fit: contain;
+    }
+    .modal-hero-caption {
+      position: absolute; bottom: 14px; left: 22px; right: 22px;
+      font-size: 12px; color: rgba(255,255,255,0.85);
+      text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+      font-family: var(--piece-font-mono, monospace);
+      letter-spacing: 0.06em;
+      pointer-events: none;
+      z-index: 2;
+      padding: 8px 12px;
+      background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0));
+      border-radius: 8px;
+    }
+
+    .modal-content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 44px 88px;
+    }
+
+    .modal-archetype {
+      font-family: var(--piece-font-mono, monospace);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--piece-accent, var(--piece-ink-muted));
+      margin-bottom: 18px;
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--piece-accent, currentColor);
+    }
+
+    .modal-headline {
+      font-family: var(--piece-font-display, inherit);
+      font-size: clamp(28px, 3.4vw, 42px);
+      font-weight: var(--piece-display-weight, 600);
+      letter-spacing: -0.022em;
+      line-height: 1.12;
+      margin-bottom: 18px;
+      color: var(--piece-ink, #0c0c0c);
+    }
+
+    .modal-hook {
+      font-family: var(--piece-font-display, inherit);
+      font-style: var(--piece-hook-style, italic);
+      font-size: 21px;
+      line-height: 1.4;
+      color: var(--piece-ink, #0c0c0c);
+      opacity: 0.78;
+      margin-bottom: 44px;
+      max-width: 680px;
+      padding-left: 14px;
+      border-left: 2px solid var(--piece-accent, var(--piece-ink-muted));
+    }
+
+    /* Section title with display font + label small caps */
+    .modal-section {
+      margin-bottom: 36px;
+    }
+    .modal-section-label {
+      font-family: var(--piece-font-mono, monospace);
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--piece-accent, var(--piece-ink-muted));
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .modal-section-label::after {
+      content: ""; flex: 1; height: 1px;
+      background: var(--piece-border, rgba(0,0,0,0.1));
+      max-width: 80px;
+    }
+    .modal-section-title {
+      font-family: var(--piece-font-display, inherit);
+      font-size: 22px;
+      font-weight: var(--piece-display-weight, 600);
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      color: var(--piece-ink, #0c0c0c);
+      margin-bottom: 12px;
+    }
+    .modal-section p {
+      font-size: 15.5px;
+      line-height: 1.72;
+      color: var(--piece-ink, #0c0c0c);
+      opacity: 0.92;
+      white-space: pre-wrap;
+    }
+
+    .modal-pullquote {
+      font-family: var(--piece-font-display, inherit);
+      font-style: var(--piece-quote-style, italic);
+      font-size: clamp(22px, 2.6vw, 30px);
+      line-height: 1.35;
+      font-weight: var(--piece-display-weight, 500);
+      color: var(--piece-ink, #0c0c0c);
+      padding: 36px 0 36px 0;
+      margin: 48px 0;
+      max-width: 720px;
+      border-top: 1px solid var(--piece-border, rgba(0,0,0,0.1));
+      border-bottom: 1px solid var(--piece-border, rgba(0,0,0,0.1));
+      position: relative;
+    }
+    .modal-pullquote::before {
+      content: "“"; position: absolute; left: -6px; top: 6px;
+      font-size: 64px; line-height: 1;
+      color: var(--piece-accent, var(--piece-ink-muted));
+      opacity: 0.4; font-family: var(--piece-font-display, serif);
+    }
+    .modal-pullquote-attribution {
+      font-family: var(--piece-font-body, inherit);
+      font-style: normal;
+      font-size: 13px;
+      color: var(--piece-ink-muted, rgba(0,0,0,0.55));
+      margin-top: 12px;
+      letter-spacing: 0.04em;
+    }
+    .modal-pullquote-attribution::before { content: "— "; }
+
+    .modal-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1px;
+      margin: 40px 0;
+      background: var(--piece-border, rgba(0,0,0,0.08));
+      border: 1px solid var(--piece-border, rgba(0,0,0,0.08));
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .modal-metric {
+      background: var(--piece-surface, rgba(0,0,0,0.02));
+      padding: 22px 18px;
+      text-align: left;
+      position: relative;
+    }
+    .modal-metric-value {
+      font-family: var(--piece-font-display, inherit);
+      font-size: 30px;
+      font-weight: var(--piece-display-weight, 600);
+      letter-spacing: -0.02em;
+      color: var(--piece-accent, var(--piece-ink));
+      margin-bottom: 6px;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .modal-metric-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--piece-ink, currentColor);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .modal-metric-context {
+      font-size: 11.5px;
+      color: var(--piece-ink-muted, rgba(0,0,0,0.5));
+      line-height: 1.4;
+    }
+    .modal-metric-confidence {
+      position: absolute; top: 12px; right: 12px;
+      width: 6px; height: 6px; border-radius: 50%;
+    }
+    .modal-metric-confidence.high { background: #22c55e; }
+    .modal-metric-confidence.med { background: #eab308; }
+    .modal-metric-confidence.low { background: #ef4444; }
+
+    /* GALLERY + EMBEDS */
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin: 36px 0;
+    }
+    .modal-gallery figure { margin: 0; }
+    .modal-gallery img {
+      width: 100%; height: auto; border-radius: 10px; display: block;
+      border: 1px solid var(--piece-border, rgba(0, 0, 0, 0.08));
+      cursor: zoom-in;
+      transition: transform 0.2s;
+    }
+    .modal-gallery img:hover { transform: scale(1.01); }
+    .modal-gallery-caption {
+      font-size: 11.5px; color: var(--piece-ink-muted, rgba(0, 0, 0, 0.55));
+      margin-top: 8px; text-align: center;
+      font-family: var(--piece-font-mono, monospace);
+      letter-spacing: 0.04em;
+    }
+
+    .modal-embed {
+      margin: 32px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--piece-border, rgba(0,0,0,0.08));
+      background: var(--piece-surface, rgba(0,0,0,0.02));
+    }
+    .modal-embed-header {
+      padding: 10px 16px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--piece-ink-muted, rgba(0,0,0,0.55));
+      border-bottom: 1px solid var(--piece-border, rgba(0,0,0,0.06));
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--piece-font-mono, monospace);
+    }
+    .modal-embed-body iframe, .modal-embed-body video {
+      width: 100%; aspect-ratio: 16 / 9; border: 0; display: block;
+    }
+    .modal-embed-body embed {
+      width: 100%; height: 70vh; border: 0; display: block;
+    }
+    .modal-embed-body audio { width: 100%; padding: 14px; }
+    .modal-embed-body img { width: 100%; display: block; }
+    .modal-embed-body pre {
+      margin: 0; padding: 18px 22px;
+      font-family: var(--piece-font-mono, ui-monospace, monospace);
+      font-size: 13px;
+      line-height: 1.55;
+      overflow-x: auto;
+      color: var(--piece-ink, currentColor);
+      background: var(--piece-surface, rgba(0,0,0,0.03));
+    }
+    .modal-embed-linkcard {
+      padding: 18px 22px;
+      display: flex; align-items: center; gap: 14px;
+      text-decoration: none; color: inherit;
+      transition: background 0.15s;
+    }
+    .modal-embed-linkcard:hover { background: var(--piece-surface, rgba(0,0,0,0.04)); }
+    .modal-embed-linkcard-icon {
+      width: 40px; height: 40px; border-radius: 8px;
+      background: var(--piece-accent, var(--piece-ink));
+      color: var(--piece-bg, #fff);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 16px; flex-shrink: 0;
+    }
+    .modal-embed-linkcard-text { min-width: 0; }
+    .modal-embed-linkcard-title { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+    .modal-embed-linkcard-url {
+      font-size: 12px;
+      color: var(--piece-ink-muted, rgba(0,0,0,0.55));
+      font-family: var(--piece-font-mono, monospace);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    /* LINKS BAR */
+    .modal-links {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 44px;
+    }
+    .modal-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 20px; border-radius: 99px;
+      text-decoration: none; font-size: 14px; font-weight: 500;
+      transition: transform 0.15s, opacity 0.15s, background 0.15s;
+    }
+    .modal-link:hover { transform: translateY(-1px); }
+    .modal-link.primary {
+      background: var(--piece-accent, var(--piece-ink));
+      color: var(--piece-bg, #ffffff);
+    }
+    .modal-link.primary:hover { opacity: 0.9; }
+    .modal-link.secondary {
+      background: transparent;
+      color: var(--piece-ink, #0c0c0c);
+      border: 1px solid var(--piece-border, rgba(0, 0, 0, 0.18));
+    }
+    .modal-link.secondary:hover { background: var(--piece-surface, rgba(0,0,0,0.03)); }
+
+    .modal-meta {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid var(--piece-border, rgba(0, 0, 0, 0.08));
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 18px 28px;
+      font-size: 13px;
+    }
+    .modal-meta-item .label {
+      font-family: var(--piece-font-mono, monospace);
+      color: var(--piece-ink-muted, rgba(0, 0, 0, 0.55));
+      font-size: 10.5px;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+    .modal-meta-item .value { color: var(--piece-ink, #0c0c0c); }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 200;
+      display: none;
+      align-items: center; justify-content: center;
+      padding: 32px;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+    /* About + Credentials + AI Toolkit blocks */
+    .owner-section {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding: 0 64px;
+    }
+    .owner-section-label {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--shell-ink-faint);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    .owner-about-text {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--shell-ink);
+      opacity: 0.88;
+      max-width: 760px;
+      margin-bottom: 12px;
+    }
+    .owner-tags-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .owner-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--shell-border);
+      border-radius: 99px;
+      text-decoration: none;
+      color: var(--shell-ink);
+      font-size: 12.5px;
+      transition: border-color 0.15s, background 0.15s;
+      background: var(--shell-surface);
+    }
+    .owner-tag:hover {
+      border-color: var(--shell-border-strong);
+      background: rgba(0,0,0,0.02);
+    }
+    .owner-tag img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .owner-tag .tag-sublabel {
+      color: var(--shell-ink-muted);
+      font-size: 11px;
+      margin-left: 6px;
+    }
+    .owner-link img {
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
+      margin-right: 6px;
+      vertical-align: text-bottom;
+    }
+
+    @media (max-width: 820px) {
+      .owner-section { padding-left: 24px; padding-right: 24px; }
+      header.shell-header, .filter-row, main, .owner-divider { padding-left: 24px; padding-right: 24px; }
+      header.shell-header { padding-top: 36px; padding-bottom: 18px; }
+      .owner-grid { grid-template-columns: 64px 1fr; }
+      .owner-avatar { width: 64px; height: 64px; font-size: 24px; }
+      .owner-stats { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; text-align: left; margin-top: 8px; }
+      .owner-stat-row { justify-content: flex-start; }
+      .modal-content { padding: 32px 24px 72px; }
+      .modal-backdrop { padding: 0; }
+      .modal { max-width: 100%; max-height: 100vh; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell-header">
+    <div class="owner-grid">
+      <div id="owner-avatar" class="owner-avatar">—</div>
+      <div class="owner-main">
+        <div id="owner-name" class="owner-name">Portfolio</div>
+        <div id="owner-role" class="owner-role"></div>
+        <div id="owner-headline" class="owner-headline"></div>
+        <div id="owner-links" class="owner-links"></div>
+      </div>
+      <div id="owner-stats" class="owner-stats"></div>
+    </div>
+  </header>
+
+  <section id="owner-about-section" class="owner-section" hidden></section>
+  <section id="owner-credentials-section" class="owner-section" hidden></section>
+  <section id="owner-toolkit-section" class="owner-section" hidden></section>
+
+  <div class="owner-divider" style="margin-top:40px"></div>
+
+  <div class="filter-row" id="filter-row">
+    <span class="filter-section-label">Work</span>
+    <span class="filter-chip active" data-tier="all">All</span>
+    <span class="filter-chip" data-tier="primary">Featured</span>
+    <span class="filter-chip" data-tier="secondary">More</span>
+    <span class="filter-meta" id="filter-meta"></span>
+  </div>
+
+  <main>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <div class="modal-backdrop" id="backdrop">
+    <aside class="modal" id="modal" role="dialog" aria-modal="true"></aside>
+  </div>
+  <div class="lightbox" id="lightbox"><img id="lightbox-img" alt="" /></div>
+
+  <script id="data-script" src="data.js"></script>
+  <script>
+    // ============================================================
+    // Portfolio Architect viewer — v0.3
+    // ============================================================
+    let activeTier = 'all';
+    let lastLoadedAt = null;
+
+    function data() { return window.__PORTFOLIO__ || { pieces: [], owner: {}, metadata: {} }; }
+    function esc(s) { return String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+    function initials(name) {
+      if (!name) return '—';
+      return name.trim().split(/\s+/).slice(0,2).map(w => w[0]).join('').toUpperCase();
+    }
+
+    function renderOwner() {
+      const owner = data().owner || {};
+      const name = owner.display_name || owner.name || 'Portfolio';
+      document.getElementById('owner-name').textContent = name;
+
+      // role line: role · location · year
+      const roleParts = [owner.role || owner.title, owner.location, owner.available_for]
+        .filter(Boolean)
+        .map(p => `<span>${esc(p)}</span>`);
+      document.getElementById('owner-role').innerHTML = roleParts.join('<span class="dot">·</span>');
+
+      const headline = owner.headline || owner.tagline || '';
+      document.getElementById('owner-headline').textContent = headline;
+
+      // avatar — supports both 'avatar' and 'photo_asset' fields
+      const av = document.getElementById('owner-avatar');
+      const photo = owner.avatar || owner.photo_asset;
+      if (photo) {
+        av.innerHTML = `<img src="${esc(photo)}" alt="${esc(name)}" />`;
+      } else {
+        av.textContent = initials(name);
+      }
+
+      // links: array of {label, url} OR legacy object {label: url}, with optional link_icons mapping
+      const linksRaw = owner.links || {};
+      const links = Array.isArray(linksRaw)
+        ? linksRaw
+        : Object.entries(linksRaw).filter(([_, url]) => url).map(([label, url]) => ({label, url}));
+      const linkIcons = owner.link_icons || {};
+      document.getElementById('owner-links').innerHTML = links
+        .map(l => {
+          const icon = linkIcons[l.label] ? `<img src="${esc(linkIcons[l.label])}" alt=""/>` : '';
+          return `<a class="owner-link" href="${esc(l.url)}" target="_blank" rel="noopener">${icon}${esc(l.label)}</a>`;
+        })
+        .join('');
+
+      // stats
+      const stats = owner.stats || [];
+      document.getElementById('owner-stats').innerHTML = stats
+        .map(s => `<div class="owner-stat-row"><span class="owner-stat-value">${esc(s.value)}</span><span>${esc(s.label)}</span></div>`)
+        .join('');
+
+      // ABOUT paragraphs
+      const about = owner.about || (owner.bio ? [owner.bio] : []);
+      const aboutEl = document.getElementById('owner-about-section');
+      if (Array.isArray(about) && about.length) {
+        aboutEl.hidden = false;
+        aboutEl.innerHTML = `<div class="owner-section-label">About</div>` +
+          about.map(p => `<p class="owner-about-text">${esc(p)}</p>`).join('');
+      } else {
+        aboutEl.hidden = true;
+      }
+
+      // CREDENTIALS (education / programs / accelerators with logos)
+      const credentials = owner.credentials || [];
+      const credEl = document.getElementById('owner-credentials-section');
+      if (credentials.length) {
+        credEl.hidden = false;
+        credEl.innerHTML = `<div class="owner-section-label">Background</div><div class="owner-tags-grid">` +
+          credentials.map(c => {
+            const img = c.logo_asset ? `<img src="${esc(c.logo_asset)}" alt="${esc(c.label)}"/>` : '';
+            const sub = c.sublabel ? `<span class="tag-sublabel">${esc(c.sublabel)}</span>` : '';
+            const href = c.url ? `href="${esc(c.url)}" target="_blank" rel="noopener"` : '';
+            return `<a class="owner-tag" ${href}>${img}<span>${esc(c.label)}</span>${sub}</a>`;
+          }).join('') + `</div>`;
+      } else {
+        credEl.hidden = true;
+      }
+
+      // AI TOOLKIT (tools Michele uses, with logos)
+      const toolkit = owner.ai_toolkit || [];
+      const toolEl = document.getElementById('owner-toolkit-section');
+      if (toolkit.length) {
+        toolEl.hidden = false;
+        toolEl.innerHTML = `<div class="owner-section-label">AI Toolkit</div><div class="owner-tags-grid">` +
+          toolkit.map(t => {
+            const img = t.logo_asset ? `<img src="${esc(t.logo_asset)}" alt="${esc(t.label)}"/>` : '';
+            const href = t.url ? `href="${esc(t.url)}" target="_blank" rel="noopener"` : '';
+            return `<a class="owner-tag" ${href}>${img}<span>${esc(t.label)}</span></a>`;
+          }).join('') + `</div>`;
+      } else {
+        toolEl.hidden = true;
+      }
+    }
+
+    function renderFilterMeta() {
+      const all = data().pieces || [];
+      const total = all.length;
+      const featured = all.filter(p => (p.tier || 'primary') === 'primary').length;
+      document.getElementById('filter-meta').textContent = total > 0
+        ? `${total} piece${total !== 1 ? 's' : ''} · ${featured} featured`
+        : '';
+    }
+
+    function pieceTier(p) {
+      return p.tier || p.meta?.primary_or_secondary || 'primary';
+    }
+    function matchesFilter(p) {
+      if (activeTier === 'all') return true;
+      return pieceTier(p) === activeTier;
+    }
+
+    function renderGrid() {
+      const all = (data().pieces || []).slice().sort((a, b) => {
+        const ta = pieceTier(a) === 'primary' ? 0 : 1;
+        const tb = pieceTier(b) === 'primary' ? 0 : 1;
+        return ta - tb;
+      });
+      const filtered = all.filter(matchesFilter);
+      const grid = document.getElementById('grid');
+
+      if (filtered.length === 0) {
+        if (all.length === 0) {
+          grid.innerHTML = `<div class="empty">
+            <h2>No pieces yet</h2>
+            <p>Add your first portfolio piece from chat. Try: <code>build a piece for [project name]</code>, or share material and we'll start from there.</p>
+          </div>`;
+        } else {
+          grid.innerHTML = `<div class="empty"><h2>No pieces match the filter</h2></div>`;
+        }
+        return;
+      }
+
+      grid.innerHTML = filtered.map(cardHTML).join('');
+      grid.querySelectorAll('.card').forEach(el => {
+        el.onclick = () => openModal(el.dataset.id);
+      });
+    }
+
+    function cardHTML(p) {
+      const card = p.card || {};
+      const theme = card.theme || {};
+
+      // Build inline CSS vars from card.theme (per-piece colored card)
+      const styleVars = [];
+      const themeMap = {
+        bg: '--card-bg', ink: '--card-ink', ink_muted: '--card-ink-muted',
+        accent: '--card-accent', border: '--card-border', border_strong: '--card-border-strong',
+        thumb_bg: '--card-thumb-bg', highlight_ink: '--card-highlight-ink'
+      };
+      for (const k in themeMap) {
+        if (theme[k]) styleVars.push(`${themeMap[k]}:${theme[k]}`);
+      }
+      const styleAttr = styleVars.length ? `style="${styleVars.join(';')}"` : '';
+
+      // Thumbnail (image or text fallback)
+      const thumb = card.thumbnail_asset || p.assets?.hero?.src;
+      const thumbHTML = thumb
+        ? `<img src="${esc(thumb)}" alt="${esc(card.title || '')}" loading="lazy" />`
+        : `<span>${esc((card.tag || 'work').toUpperCase())}</span>`;
+
+      // Highlight badges (top labels like "STARTUP", "PRE-ACCELERATOR · H-FARM")
+      const highlightsHTML = (card.highlight || []).length
+        ? `<div class="card-highlights">${(card.highlight || []).map(h =>
+            `<span class="card-highlight-badge">${esc(h.label)}</span>`
+          ).join('')}</div>`
+        : '';
+
+      // Decor (small asset positioned in corner, e.g. brand mark watermark)
+      const decor = card.decor;
+      const decorHTML = decor && decor.src
+        ? `<img class="card-decor ${esc(decor.position || 'top-left')}" src="${esc(decor.src)}" alt="" style="opacity:${decor.opacity ?? 0.9}" />`
+        : '';
+
+      // Link indicator (external_link_indicator label or icon hint)
+      const linkIcon = card.external_link_indicator && card.external_link_indicator !== 'none'
+        ? `<span class="card-link-indicator">↗ ${esc(card.external_link_indicator)}</span>`
+        : '';
+
+      return `
+        <div class="card" data-id="${esc(p.id)}" ${styleAttr}>
+          ${decorHTML}
+          <div class="card-thumb">${thumbHTML}</div>
+          <div class="card-title">${esc(card.title || 'Untitled')}</div>
+          <div class="card-subtitle">${esc(card.subtitle || '')}</div>
+          ${highlightsHTML}
+          <div class="card-footer">
+            <span class="card-tag">${esc(card.tag || '')}</span>
+            ${linkIcon}
+          </div>
+        </div>
+      `;
+    }
+
+    function openModal(id) {
+      const p = (data().pieces || []).find(x => x.id === id);
+      if (!p) return;
+      const modal = document.getElementById('modal');
+      modal.innerHTML = modalHTML(p);
+      applyVisualIdentity(modal, p.visual_identity || {});
+      document.getElementById('backdrop').classList.add('open');
+      const scroll = modal.querySelector('.modal-scroll');
+      if (scroll) scroll.scrollTop = 0;
+      bindModalEvents();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('backdrop').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function applyVisualIdentity(el, vi) {
+      const palette = vi.palette || {};
+      const typography = vi.typography || {};
+
+      if (palette.bg) el.style.setProperty('--piece-bg', palette.bg);
+      if (palette.surface) el.style.setProperty('--piece-surface', palette.surface);
+      if (palette.ink) el.style.setProperty('--piece-ink', palette.ink);
+      if (palette.ink_muted) el.style.setProperty('--piece-ink-muted', palette.ink_muted);
+      if (palette.accent) el.style.setProperty('--piece-accent', palette.accent);
+      if (palette.accent_secondary) el.style.setProperty('--piece-accent-secondary', palette.accent_secondary);
+
+      if (palette.bg) {
+        // Use hex + alpha hint; if not hex, fall back to rgba via CSS color-mix support
+        el.style.setProperty('--piece-bg-blur', palette.bg + 'ee');
+      }
+      if (palette.ink_muted) el.style.setProperty('--piece-border', palette.ink_muted + '26');
+
+      if (typography.display_family) el.style.setProperty('--piece-font-display', typography.display_family);
+      if (typography.body_family) el.style.setProperty('--piece-font-body', typography.body_family);
+      if (typography.mono_family) el.style.setProperty('--piece-font-mono', typography.mono_family);
+      if (typography.display_weight) el.style.setProperty('--piece-display-weight', typography.display_weight);
+      if (typography.hook_style) el.style.setProperty('--piece-hook-style', typography.hook_style);
+      if (typography.quote_style) el.style.setProperty('--piece-quote-style', typography.quote_style);
+    }
+
+    function modalHTML(p) {
+      const i = p.interior || {};
+      const card = p.card || {};
+      const assets = p.assets || {};
+      const links = p.links || [];
+      const meta = p.meta || {};
+      const sections = (i.sections || []).filter(s => s.body && s.body.trim());
+
+      const heroHTML = assets.hero?.src
+        ? `<div class="modal-hero">
+             <img src="${esc(assets.hero.src)}" alt="${esc(assets.hero.alt || '')}" />
+             ${assets.hero.caption ? `<div class="modal-hero-caption">${esc(assets.hero.caption)}</div>` : ''}
+           </div>`
+        : '';
+
+      const sectionsHTML = sections.map(s => `
+        <div class="modal-section">
+          <div class="modal-section-label">${esc(s.label || '')}</div>
+          ${s.title ? `<div class="modal-section-title">${esc(s.title)}</div>` : ''}
+          <p>${esc(s.body)}</p>
+        </div>
+      `).join('');
+
+      // Metrics: render objects {label, value, context, confidence} OR plain strings
+      const metricsHTML = (i.metrics_highlight || []).length
+        ? `<div class="modal-metrics">${(i.metrics_highlight || []).map(m => {
+            if (typeof m === 'string') {
+              const parts = m.split('·');
+              return `<div class="modal-metric">
+                <div class="modal-metric-value">${esc((parts[0]||'').trim())}</div>
+                <div class="modal-metric-label">${esc((parts[1]||'').trim())}</div>
+              </div>`;
+            }
+            const dot = m.confidence ? `<span class="modal-metric-confidence ${esc(m.confidence)}" title="confidence: ${esc(m.confidence)}"></span>` : '';
+            return `<div class="modal-metric">
+              ${dot}
+              <div class="modal-metric-value">${esc(m.value || '')}</div>
+              <div class="modal-metric-label">${esc(m.label || '')}</div>
+              ${m.context ? `<div class="modal-metric-context">${esc(m.context)}</div>` : ''}
+            </div>`;
+          }).join('')}</div>`
+        : '';
+
+      // Pull quote: object {text, attribution} OR plain string
+      const pq = (i.pull_quotes || [])[0];
+      const pullquoteHTML = pq
+        ? (typeof pq === 'string'
+            ? `<div class="modal-pullquote">${esc(pq)}</div>`
+            : `<div class="modal-pullquote">
+                 ${esc(pq.text || '')}
+                 ${pq.attribution ? `<div class="modal-pullquote-attribution">${esc(pq.attribution)}</div>` : ''}
+               </div>`)
+        : '';
+
+      const galleryHTML = (assets.gallery || []).length
+        ? `<div class="modal-gallery">${assets.gallery.map(g => `
+            <figure>
+              <img src="${esc(g.src)}" alt="${esc(g.alt || '')}" data-zoom="${esc(g.src)}" />
+              ${g.caption ? `<figcaption class="modal-gallery-caption">${esc(g.caption)}</figcaption>` : ''}
+            </figure>
+          `).join('')}</div>`
+        : '';
+
+      // Embeds — full multi-type support
+      const embedsHTML = (assets.embeds || []).map(e => {
+        const header = e.caption ? `<div class="modal-embed-header">${esc(e.type || '').toUpperCase()} · ${esc(e.caption)}</div>` : '';
+        let body = '';
+        const type = (e.type || '').toLowerCase();
+        if (type === 'video') {
+          // local file or external — use iframe for YouTube/Vimeo, video for files
+          if (/youtube\.com|youtu\.be|vimeo\.com/.test(e.src)) {
+            body = `<iframe src="${esc(e.src)}" allowfullscreen allow="autoplay; encrypted-media"></iframe>`;
+          } else {
+            body = `<video src="${esc(e.src)}" controls></video>`;
+          }
+        } else if (type === 'audio') {
+          body = `<audio src="${esc(e.src)}" controls></audio>`;
+        } else if (type === 'pdf') {
+          body = `<embed src="${esc(e.src)}" type="application/pdf" />`;
+        } else if (type === 'image') {
+          body = `<img src="${esc(e.src)}" alt="${esc(e.alt || e.caption || '')}" />`;
+        } else if (type === 'iframe') {
+          body = `<iframe src="${esc(e.src)}" loading="lazy"></iframe>`;
+        } else if (type === 'code') {
+          body = `<pre><code>${esc(e.code || '')}</code></pre>`;
+        } else if (type === 'link') {
+          const icon = (e.label || e.src).charAt(0).toUpperCase();
+          return `<a class="modal-embed modal-embed-linkcard" href="${esc(e.src)}" target="_blank" rel="noopener">
+            <div class="modal-embed-linkcard-icon">${esc(icon)}</div>
+            <div class="modal-embed-linkcard-text">
+              <div class="modal-embed-linkcard-title">${esc(e.label || e.caption || 'External link')}</div>
+              <div class="modal-embed-linkcard-url">${esc(e.src)}</div>
+            </div>
+          </a>`;
+        } else {
+          return '';
+        }
+        return `<div class="modal-embed">${header}<div class="modal-embed-body">${body}</div></div>`;
+      }).join('');
+
+      const linksHTML = links.length
+        ? `<div class="modal-links">${links.map(l => `
+            <a class="modal-link ${l.primary ? 'primary' : 'secondary'}" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || 'Link')}${l.kind && l.kind !== 'other' ? ` <small style="opacity:0.7">↗</small>` : ''}</a>
+          `).join('')}</div>`
+        : '';
+
+      const metaItems = [
+        meta.year ? `<div class="modal-meta-item"><div class="label">Year</div><div class="value">${esc(meta.year)}</div></div>` : '',
+        meta.duration ? `<div class="modal-meta-item"><div class="label">Period</div><div class="value">${esc(meta.duration)}</div></div>` : '',
+        meta.role ? `<div class="modal-meta-item"><div class="label">Role</div><div class="value">${esc(meta.role)}</div></div>` : '',
+        meta.team_size != null ? `<div class="modal-meta-item"><div class="label">Team</div><div class="value">${esc(meta.team_size)}</div></div>` : '',
+        (meta.tools && meta.tools.length) ? `<div class="modal-meta-item" style="grid-column: span 2"><div class="label">Stack</div><div class="value">${esc(meta.tools.join(' · '))}</div></div>` : '',
+        i.credits ? `<div class="modal-meta-item" style="grid-column: span 2"><div class="label">Credits</div><div class="value">${esc(i.credits)}</div></div>` : ''
+      ].filter(Boolean).join('');
+
+      return `
+        <div class="modal-strip"></div>
+        <div class="modal-topbar">
+          <div class="modal-topbar-left">
+            <span class="modal-tag">${esc(card.tag || '')}</span>
+            <span class="modal-topbar-title">${esc(card.title || '')}</span>
+          </div>
+          <button class="modal-close" type="button" aria-label="Close">✕ Close <span style="opacity:0.5;font-size:11px;margin-left:4px">Esc</span></button>
+        </div>
+        <div class="modal-scroll">
+          ${heroHTML}
+          <div class="modal-content">
+            ${i.narrative_archetype ? `<div class="modal-archetype">${esc(i.narrative_archetype)}</div>` : ''}
+            <h1 class="modal-headline">${esc(i.headline || card.title || '')}</h1>
+            ${i.hook ? `<p class="modal-hook">${esc(i.hook)}</p>` : ''}
+            ${sectionsHTML}
+            ${pullquoteHTML}
+            ${metricsHTML}
+            ${galleryHTML}
+            ${embedsHTML}
+            ${linksHTML}
+            ${metaItems ? `<div class="modal-meta">${metaItems}</div>` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    function bindModalEvents() {
+      const modal = document.getElementById('modal');
+      modal.querySelector('.modal-close')?.addEventListener('click', closeModal);
+      modal.addEventListener('click', e => e.stopPropagation());
+      modal.querySelectorAll('[data-zoom]').forEach(img => {
+        img.addEventListener('click', e => {
+          e.stopPropagation();
+          openLightbox(img.dataset.zoom);
+        });
+      });
+    }
+
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightbox-img').src = src;
+      lb.classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    document.querySelectorAll('[data-tier]').forEach(el => {
+      el.onclick = () => {
+        activeTier = el.dataset.tier;
+        document.querySelectorAll('[data-tier]').forEach(c => c.classList.toggle('active', c.dataset.tier === activeTier));
+        renderGrid();
+      };
+    });
+
+    // Backdrop click closes the modal (the modal itself stops propagation)
+    document.getElementById('backdrop').addEventListener('click', closeModal);
+    document.getElementById('lightbox').addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        if (document.getElementById('lightbox').classList.contains('open')) closeLightbox();
+        else if (document.getElementById('backdrop').classList.contains('open')) closeModal();
+      }
+    });
+
+    // Auto-poll data.js
+    function loadDataAndRender() {
+      const oldScript = document.getElementById('data-script');
+      const newScript = document.createElement('script');
+      newScript.src = 'data.js?_=' + Date.now();
+      newScript.onload = () => {
+        if (oldScript && oldScript.parentNode) oldScript.parentNode.removeChild(oldScript);
+        newScript.id = 'data-script';
+        const ts = window.__PORTFOLIO_LOADED_AT__;
+        if (ts !== lastLoadedAt) {
+          lastLoadedAt = ts;
+          renderAll();
+        }
+      };
+      newScript.onerror = () => { if (newScript.parentNode) newScript.parentNode.removeChild(newScript); };
+      document.head.appendChild(newScript);
+    }
+    setInterval(loadDataAndRender, 5000);
+
+    function renderAll() {
+      renderOwner();
+      renderFilterMeta();
+      renderGrid();
+    }
+
+    if (typeof window.__PORTFOLIO__ !== 'undefined') {
+      lastLoadedAt = window.__PORTFOLIO_LOADED_AT__;
+      renderAll();
+    } else {
+      document.getElementById('grid').innerHTML = '<div class="empty"><h2>Data not loaded</h2><p>Initialize the portfolio from chat: <code>initialize portfolio</code></p></div>';
+    }
+  </script>
+</body>
+</html>

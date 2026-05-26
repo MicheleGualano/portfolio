@@ -389,7 +389,7 @@ window.__PORTFOLIO__ = {
         "title": "H-FARM Pre-Accelerator",
         "subtitle": "Fall Edition 2025 · 1 of 6 selected teams. The H-FARM Startup Center program where MARA became real — six weeks of mentorship, real pitching, and the cohort that made MARA shippable.",
         "tag": "2025 · H-FARM Startup Center",
-        "thumbnail_asset": "pieces/pre-accelerator/assets/hero.svg",
+        "thumbnail_asset": "pieces/pre-accelerator/assets/cover.png",
         "external_link_indicator": "program",
         "primary_link": null,
         "theme": {
@@ -499,9 +499,9 @@ window.__PORTFOLIO__ = {
       },
       "assets": {
         "hero": {
-          "src": "pieces/pre-accelerator/assets/hero.svg",
-          "alt": "H-FARM Pre-Accelerator Fall 2025",
-          "caption": "H-FARM Startup Center · Pre-Accelerator · Fall Edition 2025"
+          "src": "pieces/pre-accelerator/assets/cover.png",
+          "alt": "H-FARM College Pre-Accelerator cover — bright red brand, H-FARM tractor mark",
+          "caption": "H-FARM College · Pre-Accelerator · Fall Edition 2025"
         },
         "gallery": [],
         "embeds": [
@@ -1274,7 +1274,7 @@ window.__PORTFOLIO__ = {
     }
   ],
   "metadata": {
-    "generated_at": "2026-05-26T08:17:24Z"
+    "generated_at": "2026-05-26T08:35:29Z"
   }
 };
-window.__PORTFOLIO_LOADED_AT__ = "2026-05-26T08:17:24Z";
+window.__PORTFOLIO_LOADED_AT__ = "2026-05-26T08:35:29Z";

@@ -393,14 +393,14 @@ window.__PORTFOLIO__ = {
         "external_link_indicator": "program",
         "primary_link": null,
         "theme": {
-          "bg": "#1B3A2F",
-          "ink": "#F8F4E8",
-          "ink_muted": "#A8D4B0",
-          "accent": "#5FAA75",
-          "border": "rgba(95,170,117,0.30)",
-          "border_strong": "#5FAA75",
-          "thumb_bg": "rgba(255,255,255,0.04)",
-          "highlight_ink": "#F8F4E8"
+          "bg": "#E60012",
+          "ink": "#FFFFFF",
+          "ink_muted": "#FFD9DA",
+          "accent": "#FFC940",
+          "border": "rgba(255,201,64,0.40)",
+          "border_strong": "#FFC940",
+          "thumb_bg": "rgba(255,255,255,0.06)",
+          "highlight_ink": "#FFFFFF"
         },
         "highlight": [
           {
@@ -475,27 +475,27 @@ window.__PORTFOLIO__ = {
       },
       "visual_identity": {
         "palette": {
-          "bg": "#1B3A2F",
-          "surface": "rgba(255,255,255,0.05)",
-          "ink": "#F8F4E8",
-          "ink_muted": "#A8D4B0",
-          "accent": "#5FAA75",
-          "accent_secondary": "#C8A96E"
+          "bg": "#E60012",
+          "surface": "rgba(255,255,255,0.06)",
+          "ink": "#FFFFFF",
+          "ink_muted": "#FFE0E2",
+          "accent": "#FFC940",
+          "accent_secondary": "#000000"
         },
         "typography": {
-          "display_family": "'Cormorant Garamond', Georgia, serif",
+          "display_family": "'Inter', -apple-system, system-ui, sans-serif",
           "body_family": "'Inter', system-ui, sans-serif",
           "mono_family": "'JetBrains Mono', monospace",
-          "display_weight": "500",
+          "display_weight": "900",
           "hook_style": "italic",
           "quote_style": "italic"
         },
         "treatment": {
-          "mood": "ivy-green-academic",
+          "mood": "bold-program-red",
           "density": "spacious",
-          "imagery_style": "campus / cohort"
+          "imagery_style": "kickoff / cohort"
         },
-        "rationale": "Dark ivy-green — the H-FARM Startup Center ivy walls in the Fall Edition cover photo. Cream type for warmth. Cormorant Garamond display to read as 'institutional, not loud'."
+        "rationale": "Real H-FARM Pre-Accelerator brand: bright red (#E60012) background, white bold uppercase display, yellow handwritten accent (#FFC940) for the 'Fall Edition' signature. Sourced directly from the program's own kickoff materials. No internal course content used — only the public visual identity."
       },
       "assets": {
         "hero": {
@@ -1274,7 +1274,7 @@ window.__PORTFOLIO__ = {
     }
   ],
   "metadata": {
-    "generated_at": "2026-05-25T20:30:04Z"
+    "generated_at": "2026-05-26T08:17:24Z"
   }
 };
-window.__PORTFOLIO_LOADED_AT__ = "2026-05-25T20:30:04Z";
+window.__PORTFOLIO_LOADED_AT__ = "2026-05-26T08:17:24Z";

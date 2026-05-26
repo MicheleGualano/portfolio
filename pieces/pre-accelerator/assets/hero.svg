@@ -1,41 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1B3A2F"/>
-      <stop offset="60%" stop-color="#2A5640"/>
-      <stop offset="100%" stop-color="#3D7A56"/>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF1818"/>
+      <stop offset="100%" stop-color="#D60010"/>
     </linearGradient>
-    <pattern id="ivy" x="0" y="0" width="64" height="64" patternUnits="userSpaceOnUse">
-      <circle cx="16" cy="16" r="2.5" fill="#5FAA75" fill-opacity="0.25"/>
-      <circle cx="48" cy="48" r="2" fill="#5FAA75" fill-opacity="0.18"/>
-      <circle cx="36" cy="8" r="1.5" fill="#5FAA75" fill-opacity="0.20"/>
+    <pattern id="dots" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#FFFFFF" fill-opacity="0.06"/>
     </pattern>
   </defs>
 
-  <rect width="1600" height="900" fill="url(#bg)"/>
-  <rect width="1600" height="900" fill="url(#ivy)"/>
+  <rect width="1600" height="900" fill="url(#redGrad)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
 
-  <!-- abstract STARTUP wall (mimicking the H-FARM Startup Center ivy wall in the PDF cover) -->
-  <g transform="translate(80,540)" opacity="0.16">
-    <rect x="0" y="0" width="240" height="240" rx="6" fill="#5FAA75"/>
+  <!-- Stylized tractor mark (H-FARM signature shape), top-center small -->
+  <g transform="translate(800,140)" fill="#FFFFFF">
+    <rect x="-26" y="-14" width="52" height="22" rx="3"/>
+    <rect x="-32" y="-2" width="64" height="10" rx="2"/>
+    <circle cx="-18" cy="14" r="8"/>
+    <circle cx="-18" cy="14" r="3" fill="#FF1818"/>
+    <circle cx="22" cy="14" r="11"/>
+    <circle cx="22" cy="14" r="4" fill="#FF1818"/>
+    <rect x="-22" y="-20" width="6" height="6" rx="1"/>
   </g>
+  <text x="800" y="200" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="18" letter-spacing="2">H-FARM COLLEGE</text>
 
-  <!-- top meta -->
-  <text x="120" y="160" fill="#A8D4B0" font-family="JetBrains Mono, monospace" font-size="18" letter-spacing="6">H-FARM STARTUP CENTER  ·  FALL EDITION 2025</text>
+  <!-- Main wordmark -->
+  <text x="800" y="490" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="160" letter-spacing="-2">PRE-ACCELERATOR</text>
 
-  <!-- main title -->
-  <text x="120" y="460" fill="#F8F4E8" font-family="Cormorant Garamond, Georgia, serif" font-weight="500" font-size="180" letter-spacing="-4">Pre-Accelerator</text>
-  <text x="124" y="540" fill="#A8D4B0" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="44">Young minds, big startups ideas.</text>
+  <!-- Handwritten 'Fall Edition' in yellow -->
+  <text x="800" y="610" text-anchor="middle" fill="#FFC940" font-family="'Brush Script MT', cursive" font-style="italic" font-size="120" font-weight="500">Fall Edition</text>
 
-  <!-- subline -->
-  <text x="120" y="610" fill="#E8E0CC" font-family="Inter, sans-serif" font-size="22" letter-spacing="0.5">MARA was 1 of 6 selected — the cohort that became real</text>
-
-  <!-- bottom meta -->
-  <text x="120" y="820" fill="#A8D4B0" font-family="JetBrains Mono, monospace" font-size="16" letter-spacing="4">ETERNA  ·  MARA  ·  WEALTURA  ·  PROFIVE  ·  FWDRI  ·  FARMATERM  ·  RETAP</text>
-
-  <!-- decorative leaf cluster top-right -->
-  <g transform="translate(1340,200)" opacity="0.6">
-    <circle cx="0" cy="0" r="80" fill="none" stroke="#A8D4B0" stroke-width="1.5"/>
-    <circle cx="0" cy="0" r="48" fill="#5FAA75" fill-opacity="0.3"/>
+  <!-- Bottom: ESC mark + cohort hint -->
+  <g transform="translate(800,760)" fill="#FFFFFF">
+    <rect x="-32" y="-14" width="64" height="20" rx="3" fill="none"/>
   </g>
+  <text x="800" y="790" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="16" letter-spacing="3">ENTREPRENEURSHIP &amp; STARTUP CENTER</text>
+  <text x="800" y="830" text-anchor="middle" fill="#FFC940" font-family="'Brush Script MT', cursive" font-style="italic" font-size="22">2025 cohort  ·  6 selected teams  ·  MARA</text>
 </svg>
